@@ -1,3 +1,5 @@
 # personal / not for repo
 context prev conversation.txt
 Cómo cambió mi forma de pensar el diseño*.md
+.venv/
+__pycache__/
