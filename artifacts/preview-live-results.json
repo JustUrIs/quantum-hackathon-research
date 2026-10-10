@@ -1,0 +1,41 @@
+[
+  {
+    "project": "lost-signal",
+    "url": "https://justuris.github.io/quantum-hackathon-research/lost-signal/",
+    "numerical_cases": 26,
+    "status": "passed",
+    "live_backend_disabled": true,
+    "export_labels_source": true,
+    "widths": [
+      390,
+      768,
+      1440
+    ]
+  },
+  {
+    "project": "qday-clock",
+    "url": "https://justuris.github.io/quantum-hackathon-research/qday-clock/",
+    "numerical_cases": 38,
+    "status": "passed",
+    "live_backend_disabled": true,
+    "export_labels_source": true,
+    "widths": [
+      390,
+      768,
+      1440
+    ]
+  },
+  {
+    "project": "order",
+    "url": "https://justuris.github.io/quantum-hackathon-research/order/",
+    "numerical_cases": 36,
+    "status": "passed",
+    "live_backend_disabled": true,
+    "export_labels_source": true,
+    "widths": [
+      390,
+      768,
+      1440
+    ]
+  }
+]

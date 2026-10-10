@@ -1,6 +1,7 @@
 """Numerical parity and user-flow checks for the static public reference site.
 
-Starts its own localhost HTTP server; no QPU jobs, external navigation or auth.
+Starts a localhost server, or checks TEST_PREVIEW_URL when explicitly supplied.
+No QPU jobs or authentication.
 """
 
 import functools
@@ -27,11 +28,16 @@ class Quiet(SimpleHTTPRequestHandler):
         pass
 
 
-server = ThreadingHTTPServer(
-    ("127.0.0.1", 0), functools.partial(Quiet, directory=str(ROOT / "docs"))
-)
-threading.Thread(target=server.serve_forever, daemon=True).start()
-base = f"http://127.0.0.1:{server.server_port}"
+remote = os.environ.get("TEST_PREVIEW_URL", "").rstrip("/")
+server = None
+if remote:
+    base = remote
+else:
+    server = ThreadingHTTPServer(
+        ("127.0.0.1", 0), functools.partial(Quiet, directory=str(ROOT / "docs"))
+    )
+    threading.Thread(target=server.serve_forever, daemon=True).start()
+    base = f"http://127.0.0.1:{server.server_port}"
 records = []
 
 
@@ -64,9 +70,10 @@ def close(actual, expected, tol=1e-10):
 with sync_playwright() as p:
     browser = p.chromium.launch()
     page = browser.new_page(viewport={"width": 1440, "height": 950})
-    page.goto(base)
+    assert page.goto(base + "/").status == 200
     assert page.locator(".project").count() == 3
-    page.screenshot(path=str(ROOT / "artifacts/preview-hub.png"), full_page=True)
+    if not remote:
+        page.screenshot(path=str(ROOT / "artifacts/preview-hub.png"), full_page=True)
     rng = random.Random(42)
     for slug in ("lost-signal", "qday-clock", "order"):
         errors = []
@@ -75,7 +82,7 @@ with sync_playwright() as p:
             collected.append(str(error))
 
         page.on("pageerror", capture_error)
-        page.goto(base + "/" + slug + "/")
+        assert page.goto(base + "/" + slug + "/").status == 200
         page.wait_for_function(
             "document.getElementById('status').textContent.startsWith('Local model ready')"
         )
@@ -170,6 +177,7 @@ with sync_playwright() as p:
         records.append(
             {
                 "project": slug,
+                "url": base + "/" + slug + "/" if remote else "local preview",
                 "numerical_cases": cases,
                 "status": "passed",
                 "live_backend_disabled": True,
@@ -179,7 +187,9 @@ with sync_playwright() as p:
         )
         print(slug, cases, "reference parity cases passed", flush=True)
     browser.close()
-server.shutdown()
-(ROOT / "artifacts/preview-results.json").write_text(
+if server:
+    server.shutdown()
+report = "preview-live-results.json" if remote else "preview-results.json"
+(ROOT / "artifacts" / report).write_text(
     json.dumps(records, indent=2) + "\n", encoding="utf-8"
 )

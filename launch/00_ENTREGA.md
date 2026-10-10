@@ -2,6 +2,8 @@
 
 Los tres viven en el mismo repositorio que IMPOSTOR y se suben a Qollab como proyectos independientes. No necesitan servicios pagos ni claves. Cada carpeta contiene código, licencia MIT, datos y un README que sirve como ficha.
 
+**Ya podés compartir las [tres demos públicas](https://justuris.github.io/quantum-hackathon-research/).** Son vistas previas de referencia sin backend remoto. [Enlaces, ganchos y recorridos breves](05_DEMOS_PUBLICAS.md).
+
 | Proyecto | Carpeta | Momento de la demo | Tema recomendado |
 |---|---|---|---|
 | LOST SIGNAL | `lost-signal-qollab/` | apagar GPS, subir ruido, perder la mejora GHZ | Unlocked; Impact solo con validación adicional |

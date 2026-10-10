@@ -2,6 +2,8 @@
 
 Entrada: https://justuris.github.io/quantum-hackathon-research/
 
+Publicación verificada el 10 de octubre de 2026: GitHub Pages sirve `main:/docs` con HTTPS. Las tres páginas respondieron HTTP 200 y pasaron 100 comprobaciones numéricas y de interacción desde el sitio público. Las tres descargas ZIP coinciden por SHA-256 con los paquetes locales. Evidencia: `artifacts/preview-live-results.json`.
+
 Estas demos funcionan sin cuenta ni instalación. Son vistas previas: usan cálculos analíticos en JavaScript y referencias precalculadas con Qiskit. No ejecutan Python ni mandan trabajos a IonQ. El aviso aparece en cada página y en las exportaciones; el botón de backend está deshabilitado.
 
 ## LOST SIGNAL
