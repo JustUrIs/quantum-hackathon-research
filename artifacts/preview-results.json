@@ -1,0 +1,38 @@
+[
+  {
+    "project": "lost-signal",
+    "numerical_cases": 26,
+    "status": "passed",
+    "live_backend_disabled": true,
+    "export_labels_source": true,
+    "widths": [
+      390,
+      768,
+      1440
+    ]
+  },
+  {
+    "project": "qday-clock",
+    "numerical_cases": 38,
+    "status": "passed",
+    "live_backend_disabled": true,
+    "export_labels_source": true,
+    "widths": [
+      390,
+      768,
+      1440
+    ]
+  },
+  {
+    "project": "order",
+    "numerical_cases": 36,
+    "status": "passed",
+    "live_backend_disabled": true,
+    "export_labels_source": true,
+    "widths": [
+      390,
+      768,
+      1440
+    ]
+  }
+]

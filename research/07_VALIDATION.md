@@ -50,6 +50,8 @@ ORDER defaults: yes-to-A is **90.9576%** when first and **64.0083%** when second
 
 ## What remains unverified
 
+The public browser reference previews are an additional delivery surface. `python tools/test_previews.py` passed **100 numerical comparisons** (26 LOST SIGNAL, 38 Q-DAY CLOCK, 36 ORDER), checked widths 390/768/1440, disabled backend execution, export provenance and zero browser exceptions. Q-DAY comparisons use the generated Python/Qiskit fixtures; they verify browser presentation and ablation, not an independent reimplementation of order finding. ORDER's browser p-value approximation agrees within 2e-7 in the tested cases. Full results: `artifacts/preview-results.json`.
+
 No live Qollab/Pyodide execution, remote IonQ job, hardware run, field navigation test, biological validation or externally validated survey study occurred in this session. The offline IonQ serializer confirms accepted instruction encoding only; it does not validate cloud acceptance, native compiled gate limits, noise or queue completion.
 
 The CUA environment reported **no browser available**, so authenticated Qollab UI actions could not proceed. Public Qollab docs were read over HTTP to check `.callPromising`, relative JS imports, injected backend use, one-job limits and gate compilation behavior. The provider is passed from `main.js` into the helper module rather than relying on its global visibility inside imports.

@@ -4,6 +4,8 @@ Four projects for the Qollab × IonQ hackathon. Each experience makes a quantum 
 
 **This effort is supported by Qollab & IonQ.**
 
+**[Try the three interactive browser previews](https://justuris.github.io/quantum-hackathon-research/)** — no account or installation required. These use analytical browser calculations and precomputed Qiskit references; they do not run Python or submit quantum jobs. Download the full Qollab projects below to execute their circuits.
+
 | Project | The experiment | Source / project page | Upload package |
 |---|---|---|---|
 | IMPOSTOR | Try to reproduce constrained quantum-game correlations | [Existing project](impostor-qollab/README.md) | `impostor-qollab/` |
@@ -37,6 +39,10 @@ Local checks cover physical identities, reversible arithmetic, independent proba
 **Qollab/Pyodide and remote IonQ execution are not yet verified.** The projects follow Qollab's documented bridge and one-job model. Local execution and a GitHub push do not replace publication, the public video or the captain's final submission.
 
 ## See the interfaces
+
+[LOST SIGNAL demo](https://justuris.github.io/quantum-hackathon-research/lost-signal/) · [Q-DAY CLOCK demo](https://justuris.github.io/quantum-hackathon-research/qday-clock/) · [ORDER demo](https://justuris.github.io/quantum-hackathon-research/order/).
+
+The public previews pass 100 numerical reference comparisons, mobile layout checks and export provenance checks. Rebuild with `python tools/build_previews.py` and verify with `python tools/test_previews.py`. After a UI-only change, `--ui-only` reuses the existing reference data; regenerate fully after changing any scientific model. GitHub Pages serves `main:/docs`.
 
 [LOST SIGNAL](artifacts/lost-signal-desktop.png) · [Q-DAY CLOCK](artifacts/qday-clock-desktop.png) · [ORDER](artifacts/order-desktop.png). Mobile screenshots are alongside them. Every export distinguishes local calculations from a captured backend snapshot.
 

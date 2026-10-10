@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Three quantum experiments | Qollab × IonQ</title>
+    <meta
+      name="description"
+      content="Cut the GPS signal, inspect a quantum factoring demo, or swap the order of two questions. Three interactive experiments with inspectable evidence."
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f7f8fb;
+        color: #23304d;
+        font:
+          17px/1.6 "Segoe UI",
+          sans-serif;
+      }
+      main {
+        max-width: 1280px;
+        padding: 34px 40px;
+        margin: auto;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        font-size: 14px;
+        border-bottom: 1px solid #d1d8e5;
+        padding: 0 0 22px;
+      }
+      header a {
+        color: inherit;
+      }
+      h1 {
+        font:
+          clamp(45px, 6vw, 80px) / 1.05 Georgia,
+          serif;
+        letter-spacing: -0.045em;
+        max-width: 800px;
+        margin: 70px 0 24px;
+      }
+      .lead {
+        max-width: 67ch;
+        color: #5b657b;
+        margin-bottom: 42px;
+      }
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .project {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 9px;
+        color: #fff;
+        padding: 30px;
+        min-height: 480px;
+        text-decoration: none;
+      }
+      .project:hover .enter {
+        text-decoration: underline;
+      }
+      .lost {
+        background: #0d3249;
+      }
+      .qday {
+        background: #e5e5f0;
+        color: #26224c;
+      }
+      .order {
+        background: #fff;
+        color: #202f65;
+        border: 1px solid #cbd4ed;
+      }
+      .project h2 {
+        font-size: 17px;
+        letter-spacing: 0.03em;
+        margin: 0;
+      }
+      .project h3 {
+        font:
+          32px/1.2 Georgia,
+          serif;
+        letter-spacing: -0.02em;
+        margin: 24px 0 16px;
+      }
+      .project p {
+        font-size: 15px;
+        opacity: 0.85;
+      }
+      .enter {
+        font-weight: 700;
+        margin-top: auto;
+        padding-top: 20px;
+      }
+      .drawing {
+        height: 125px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font:
+          56px Georgia,
+          serif;
+      }
+      .lost .drawing {
+        color: #64d8cd;
+      }
+      .qday .drawing {
+        color: #b9314f;
+      }
+      .order .drawing {
+        color: #254cc8;
+      }
+      .details {
+        margin: 50px 0;
+        padding: 30px 0;
+        border-top: 1px solid #d1d8e5;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 45px;
+      }
+      .details h2 {
+        font:
+          25px Georgia,
+          serif;
+      }
+      .details p {
+        font-size: 14px;
+        color: #5b657b;
+        max-width: 65ch;
+      }
+      .details a {
+        color: #254cc8;
+      }
+      footer {
+        border-top: 1px solid #d1d8e5;
+        padding: 24px 0;
+        font-size: 12px;
+        color: #5b657b;
+      }
+      :focus-visible {
+        outline: 3px solid #b72e62;
+        outline-offset: 6px;
+      }
+      @media (max-width: 900px) {
+        .projects {
+          grid-template-columns: 1fr;
+        }
+        .project {
+          min-height: 340px;
+        }
+        .drawing {
+          height: 80px;
+        }
+        .details {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        main {
+          padding: 24px;
+        }
+        .project h3 {
+          max-width: 20ch;
+        }
+        h1 {
+          margin-top: 45px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>Qollab × IonQ · Quantum Hackathon 2026</span
+        ><a href="https://github.com/JustUrIs/quantum-hackathon-research"
+          >Source &amp; evidence</a
+        >
+      </header>
+      <h1>Try the experiment.<br />Inspect what it proves.</h1>
+      <p class="lead">
+        Three ways to get your hands on a quantum idea. Each experiment gives
+        you a control that can change the conclusion. Open one and see what
+        happens.
+      </p>
+      <div class="projects">
+        <a class="project lost" href="./lost-signal/"
+          ><h2>LOST SIGNAL</h2>
+          <div class="drawing" aria-hidden="true">⌖</div>
+          <h3>Find where entanglement stops helping.</h3>
+          <p>
+            Cut the GPS signal. Compare sensor precision under noise. Remove a
+            molecule’s directional coupling and watch its compass response go
+            flat.
+          </p>
+          <span class="enter">Try the sensing experiment</span></a
+        >
+        <a class="project qday" href="./qday-clock/"
+          ><h2>Q-DAY CLOCK</h2>
+          <div class="drawing" aria-hidden="true">15 = 3 × 5</div>
+          <h3>Two demos. One already knew the answer.</h3>
+          <p>
+            Inspect order finding, a pre-solved imitation and random outputs.
+            Then explore the assumptions behind a cryptographic migration clock.
+          </p>
+          <span class="enter">Enter the evidence room</span></a
+        >
+        <a class="project order" href="./order/"
+          ><h2>ORDER</h2>
+          <div class="drawing" aria-hidden="true">A ⇄ B</div>
+          <h3>Change the sequence. Check the answer.</h3>
+          <p>
+            Swap questions, test a probability symmetry and let a classical
+            model challenge it. Audit counts from your own questionnaire.
+          </p>
+          <span class="enter">Try the question experiment</span></a
+        >
+      </div>
+      <section class="details">
+        <div>
+          <h2>What runs in your browser?</h2>
+          <p>
+            These public previews use analytical JavaScript and reference
+            results generated with Qiskit. They send no quantum jobs. Each
+            preview labels its source and exports its assumptions. The
+            downloadable projects run Python and circuits in Qollab.
+          </p>
+          <a
+            href="https://github.com/JustUrIs/quantum-hackathon-research/tree/main/releases"
+            >Download the three Qollab packages</a
+          >
+        </div>
+        <div>
+          <h2>Go beyond the preview.</h2>
+          <p>
+            The repository includes physics tests, independent baselines, local
+            backend counts, sources and demo scripts. A live Qollab/IonQ run and
+            the final hackathon submissions still require verification. No
+            speedup, field navigation or quantum cognition mechanism is claimed.
+          </p>
+          <a
+            href="https://github.com/JustUrIs/quantum-hackathon-research/blob/main/research/07_VALIDATION.md"
+            >Read the validation record</a
+          >
+        </div>
+      </section>
+      <footer>
+        This effort is supported by Qollab &amp; IonQ. · Project code: MIT
+        license. · No accounts, analytics or respondent records required.
+      </footer>
+    </main>
+  </body>
+</html>
