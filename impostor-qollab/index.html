@@ -1,0 +1,161 @@
+<div id="app" class="app">
+  <header class="hero">
+    <p class="kicker">A Qiskit game · runs on Qollab · audited on IonQ</p>
+    <h1 class="title">IMPOSTOR</h1>
+    <p class="lede">Can you fake a quantum computer?</p>
+    <p class="thesis">In April 2026 someone won 1&nbsp;BTC for “breaking” a key on a quantum computer. Then someone swapped the quantum computer for <code>/dev/urandom</code>, and the key still came out. <strong>So how do you know something is quantum?</strong> Here you play the faker. Use any classical trick you like. A referee written in Qiskit will catch you, and show you the theorem that did it.</p>
+  </header>
+
+  <section class="audit" aria-labelledby="auditTitle">
+    <h2 id="auditTitle" class="sr-only">Audit of the selected backend</h2>
+    <div class="audit-row">
+      <span class="tag">THE ONE JOB</span>
+      <p id="auditStatus" class="audit-status" aria-live="polite">Packing the referees into one circuit…</p>
+    </div>
+    <div id="auditTable" class="audit-table" hidden></div>
+  </section>
+
+  <section class="source" aria-labelledby="sourceTitle">
+    <h2 id="sourceTitle" class="label">Who plays the quantum side?</h2>
+    <div class="seg" id="source" role="radiogroup" aria-label="Quantum source">
+      <button role="radio" aria-checked="true" data-source="exact">Qiskit, exact</button>
+      <button role="radio" aria-checked="false" data-source="audit" disabled>This run's backend</button>
+      <button role="radio" aria-checked="false" data-source="urandom" class="slop">/dev/urandom</button>
+    </div>
+    <p id="sourceNote" class="note">Each answer is one shot sampled from the exact statevector of the round's Qiskit circuit: what a perfect device would return.</p>
+  </section>
+
+  <nav class="tabs" role="tablist" aria-label="Levels">
+    <button role="tab" id="tab-chsh" aria-controls="lv-chsh" aria-selected="true"><span>01</span> Telepathy</button>
+    <button role="tab" id="tab-magic" aria-controls="lv-magic" aria-selected="false" tabindex="-1"><span>02</span> Magic square</button>
+    <button role="tab" id="tab-zip" aria-controls="lv-zip" aria-selected="false" tabindex="-1"><span>03</span> Zip</button>
+  </nav>
+
+  <!-- ============ LEVEL 1 ============ -->
+  <section id="lv-chsh" role="tabpanel" aria-labelledby="tab-chsh" class="level">
+    <div class="rules">
+      <h2>Telepathy</h2>
+      <p>You and your partner are separated. The referee asks each of you a secret bit: <b>x</b> to you, <b>y</b> to your partner. Each answers one bit, <b>a</b> and <b>b</b>.</p>
+      <p class="rule">You win if <b>a ⊕ b = x · y</b>. Your answers must <em>match</em>, unless you were both asked 1; then they must <em>differ</em>.</p>
+      <p>Agree on a plan now. Once the game starts you can't talk.</p>
+    </div>
+
+    <div class="board">
+      <fieldset class="strategy" id="chshStrategy">
+        <legend>Your plan</legend>
+        <div class="srow"><span>You, asked <b>0</b>, answer</span><div class="bit" data-i="0"></div></div>
+        <div class="srow"><span>You, asked <b>1</b>, answer</span><div class="bit" data-i="1"></div></div>
+        <div class="srow"><span>Partner, asked <b>0</b>, answers</span><div class="bit" data-i="2"></div></div>
+        <div class="srow"><span>Partner, asked <b>1</b>, answers</span><div class="bit" data-i="3"></div></div>
+      </fieldset>
+
+      <div class="arena">
+        <div class="actions">
+          <button class="primary" id="chshOne">Play 1 round</button>
+          <button id="chshMany">Play 200 rounds</button>
+          <button id="chshBot">Let the bot try every plan</button>
+          <button class="ghost" id="chshReset">Reset</button>
+        </div>
+        <div class="lastround" id="chshLast" aria-live="polite">No rounds yet.</div>
+        <div class="score">
+          <div class="meter you"><span class="who">You (classical)</span><span class="val" id="chshYou">–</span><span class="exact" id="chshExact"></span></div>
+          <div class="meter q"><span class="who" id="chshQLabel">Quantum pair</span><span class="val" id="chshQ">–</span></div>
+        </div>
+        <svg class="chart" id="chshChart" viewBox="0 0 600 220" role="img" aria-label="Running win rate: you versus the quantum pair, with the classical ceiling at 75 percent"></svg>
+        <p class="verdict" id="chshVerdict" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <details class="why">
+      <summary>Why you can't win (the theorem)</summary>
+      <p>Any plan is 4 bits, so there are only 16 deterministic plans. Checking all of them, none wins more than 3 of the 4 question pairs: <b>75%</b>. Shared randomness only mixes plans, so it can't beat the best one either. This is Bell's theorem in its CHSH form (1964/1969).</p>
+      <p>The quantum pair shares one entangled Bell pair. Each player rotates their qubit by an angle that depends only on their own question, then measures. Interference makes their bits agree with probability cos²(π/8) ≈ <b>85.4%</b>, which no plan reaches. The circuit is <code>H · CX · RY(θ<sub>x</sub>) ⊗ RY(θ<sub>y</sub>)</code>: 2 qubits per round.</p>
+    </details>
+  </section>
+
+  <!-- ============ LEVEL 2 ============ -->
+  <section id="lv-magic" role="tabpanel" aria-labelledby="tab-magic" class="level" hidden>
+    <div class="rules">
+      <h2>Magic square</h2>
+      <p>A 3×3 grid of signs. You get a <b>row</b>, your partner gets a <b>column</b>.</p>
+      <p class="rule">Your row must multiply to <b>+</b>. Their column must multiply to <b>−</b>. You win if you agree on the cell where they cross.</p>
+      <p>Fill the grid. You fill 2 cells of each row and the last one is forced by the rule; your partner does the same down each column. Each cell shows your answer <b>Y</b> and your partner's <b>P</b>. Try to turn every cell green.</p>
+    </div>
+
+    <div class="board">
+      <div class="gridwrap">
+        <div class="magic" id="magicGrid" role="grid" aria-label="Your 3 by 3 sign grid"></div>
+        <p class="note" id="magicConflicts" aria-live="polite"></p>
+      </div>
+      <div class="arena">
+        <div class="actions">
+          <button class="primary" id="magicOne">Play 1 round</button>
+          <button id="magicMany">Play 200 rounds</button>
+          <button id="magicBot">Let the bot try all 4,096 plans</button>
+          <button class="ghost" id="magicReset">Reset</button>
+        </div>
+        <div class="lastround" id="magicLast" aria-live="polite">No rounds yet.</div>
+        <div class="score">
+          <div class="meter you"><span class="who">You (classical)</span><span class="val" id="magicYou">–</span><span class="exact" id="magicExact"></span></div>
+          <div class="meter q"><span class="who" id="magicQLabel">Quantum pair</span><span class="val" id="magicQ">–</span></div>
+        </div>
+        <svg class="chart" id="magicChart" viewBox="0 0 600 220" role="img" aria-label="Running win rate: you versus the quantum pair, with the classical ceiling at 8 of 9"></svg>
+        <p class="verdict" id="magicVerdict" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <details class="why">
+      <summary>Why you can't win (the theorem)</summary>
+      <p>Multiply all 9 numbers by rows and you get <b>+1</b>. Multiply them by columns and you get <b>−1</b>. No grid of numbers can do both, so at least one cell always clashes. The bot checks all <b>4,096</b> deterministic plans: the best wins <b>8/9</b>.</p>
+      <p>Mermin and Peres (1990) put a two-qubit observable in each cell instead of a number. Each row of observables multiplies to <b>+I</b> and each column to <b>−I</b>, and every observable in a row or column commutes with the others. With two shared Bell pairs, both players read their line in one joint measurement and they <b>always</b> agree: <b>9/9</b>. Our circuit needs no ancillas: each line gets a 2-qubit Clifford that rotates its observables onto Z, 4 qubits per round.</p>
+      <div class="square" id="obsSquare" aria-label="The observable square"></div>
+    </details>
+  </section>
+
+  <!-- ============ LEVEL 3 ============ -->
+  <section id="lv-zip" role="tabpanel" aria-labelledby="tab-zip" class="level" hidden>
+    <div class="rules">
+      <h2>Zip</h2>
+      <p>Your partner will run a measurement you never get to see. You send them one message beforehand, and they must output strings that score high on a test (linear XEB). Random guessing scores 0.</p>
+      <p class="rule">The quantum player sends <b>n qubits</b>. You send <b>k bits</b>. How many bits do you need to keep up?</p>
+      <p>This is the 2025 “quantum information supremacy” experiment (Kretschmer, Grewal, …, Aaronson), done on a 12-qubit trapped-ion computer.</p>
+    </div>
+
+    <div class="board">
+      <fieldset class="strategy">
+        <legend>Your budget</legend>
+        <div class="srow"><label for="zipN">Qubits sent by the quantum player</label>
+          <select id="zipN"><option value="8">8 (computed live)</option><option value="12">12 (as in the paper, precomputed)</option></select></div>
+        <div class="srow col"><label for="zipK">Bits you may send: <b id="zipKVal">64</b></label>
+          <input type="range" id="zipK" min="0" max="8" step="1" value="3" aria-describedby="zipKHelp">
+          <span id="zipKHelp" class="note">Your strategy: send signs of your state's projections onto random vectors you both agreed on, and your partner rebuilds a guess.</span></div>
+        <button class="primary" id="zipRun">Send my bits</button>
+      </fieldset>
+      <div class="arena">
+        <div class="score">
+          <div class="meter you"><span class="who">You: <span id="zipKLabel">–</span> bits</span><span class="val" id="zipYou">–</span></div>
+          <div class="meter q"><span class="who" id="zipQLabel">Quantum: n qubits</span><span class="val" id="zipQ">–</span></div>
+        </div>
+        <svg class="chart" id="zipChart" viewBox="0 0 600 260" role="img" aria-label="XEB score versus bits sent, for the classical impostor, the quantum message and random guessing"></svg>
+        <p class="verdict" id="zipVerdict" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <details class="why">
+      <summary>Why you can't win (the theorem)</summary>
+      <p>For 12 qubits the paper proves that <b>any</b> classical protocol reaching the hardware's score of 0.427 needs <b>at least 78 bits</b>, and the best known one uses about <b>330</b>. The quantum message is 12 qubits. The gap grows exponentially with n: the bound is Ω(ε²·2ⁿ). Our impostor is one natural strategy, not the best possible one; the theorem covers them all.</p>
+      <p>Circuit: Alice's state is a random brickwork of U and RZZ gates with a <b>periodic boundary</b>. The wrap-around gate between the last and first qubits is native on all-to-all trapped-ion hardware and costs SWAPs on a nearest-neighbour chip. Bob applies a random Clifford and measures.</p>
+    </details>
+  </section>
+
+  <section class="claims">
+    <h2>What we do not claim</h2>
+    <ul>
+      <li>A simulator proves no physical advantage. It <em>computes</em> the correlations. The advantages here are theorems about separated players and about bits, and they hold however fast your computer is.</li>
+      <li>CHSH (1969) and the magic square (1990) are not new. The format is: you play the impostor, there is a /dev/urandom ablation, and the three levels together make one argument.</li>
+      <li>Our Zip impostor is one strategy among many; the 78-bit bound is the paper's.</li>
+    </ul>
+    <p class="thesis-end">Everyone sells quantum computing as <em>speed</em>. Speed is the advantage nobody can check today. Correlation, memory and precision can be checked with a pencil. <b>A quantum computer is the thing you can't fake.</b></p>
+    <p class="attr">This effort is supported by Qollab &amp; IonQ</p>
+  </section>
+</div>

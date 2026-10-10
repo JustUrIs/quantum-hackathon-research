@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IMPOSTOR dev harness</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300..700&family=Inter:wght@400;700&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap">
+<link rel="stylesheet" href="/main.css">
+<script type="importmap">{"imports": {"impostor.service": "/dev/svc-shim.js"}}</script>
+<style>body{margin:0;background:#0b0b0c}</style>
+</head><body>
+<div id="mount"></div>
+<script type="module">
+  const html = await (await fetch('/index.html')).text();
+  document.getElementById('mount').innerHTML = html;
+  await import('/dev/svc-shim.js');
+  await import('/main.js');
+</script>
+</body></html>
