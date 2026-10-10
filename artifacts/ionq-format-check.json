@@ -1,0 +1,51 @@
+{
+  "provider_version": "1.0.2",
+  "scope": "OFFLINE ONLY; no remote job sent",
+  "checks": [
+    {
+      "project": "lost-signal",
+      "qubits": 8,
+      "serialized_instructions": 17,
+      "measurements": 8,
+      "measurement_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "status": "offline serialization passed"
+    },
+    {
+      "project": "qday-clock",
+      "qubits": 10,
+      "serialized_instructions": 271,
+      "measurements": 6,
+      "measurement_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "status": "offline serialization passed"
+    },
+    {
+      "project": "order",
+      "qubits": 6,
+      "serialized_instructions": 9,
+      "measurements": 4,
+      "measurement_map": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "status": "offline serialization passed"
+    }
+  ]
+}

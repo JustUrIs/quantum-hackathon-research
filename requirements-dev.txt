@@ -1,0 +1,5 @@
+qiskit==2.5.2
+numpy>=2.0,<3
+scipy>=1.14,<2
+playwright>=1.49,<2
+pygeomag==1.1.0

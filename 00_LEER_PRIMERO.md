@@ -1,5 +1,7 @@
 # LEER PRIMERO (sábado a la mañana)
 
+> **Actualización de continuidad, 10/10:** LOST SIGNAL, Q-DAY CLOCK y ORDER ya tienen implementación. El estado actual, los paquetes y los pendientes están en `README.md` y `launch/00_ENTREGA.md`. El texto de abajo conserva el handoff anterior de IMPOSTOR; sus porcentajes y promesas no son una auditoría nueva. Las correcciones científicas al brief están en `research/06_BUILD_DECISIONS.md`.
+
 ## Qué hay
 
 **Idea elegida: IMPOSTOR.** "¿Podés fingir ser una computadora cuántica?"

@@ -1,0 +1,175 @@
+{
+  "source": "Local analytical models and exact Qiskit statevector; NOT remote IonQ or hardware",
+  "versions": {
+    "python": "3.13.5",
+    "qiskit": "2.5.2"
+  },
+  "lost_signal": {
+    "params": {
+      "n": 4,
+      "eta": 0.08,
+      "shots": 256
+    },
+    "sql_rad": 0.03385272086484246,
+    "ghz_rad": 0.02151762131774933,
+    "gain": 1.5732557221331067,
+    "crossing": 0.23104906018664842,
+    "resource_interactions": 1024,
+    "radical_contrast": 0.13967382675996992,
+    "isotropic_contrast": 3.6637359812630166e-15
+  },
+  "qday_clock": [
+    {
+      "n": 15,
+      "a": 2,
+      "bits": 6,
+      "genuine_success": 0.5000000000000018,
+      "random_phase_success": 0.21875,
+      "random_gcd_success": 0.46153846153846156,
+      "genuine": {
+        "qubits": 10,
+        "cx": 111,
+        "depth": 167
+      },
+      "presolved": {
+        "qubits": 6,
+        "cx": 0,
+        "depth": 1,
+        "period_supplied": 4
+      },
+      "histogram_distance": 9.43689570931383e-16,
+      "trial_division_checks": 2
+    },
+    {
+      "n": 21,
+      "a": 2,
+      "bits": 6,
+      "genuine_success": 0.2879891370366875,
+      "random_phase_success": 0.09375,
+      "random_gcd_success": 0.42105263157894735,
+      "genuine": {
+        "qubits": 11,
+        "cx": 10137,
+        "depth": 23192
+      },
+      "presolved": {
+        "qubits": 6,
+        "cx": 26,
+        "depth": 74,
+        "period_supplied": 6
+      },
+      "histogram_distance": 7.363554210826351e-14,
+      "trial_division_checks": 2
+    },
+    {
+      "n": 33,
+      "a": 2,
+      "bits": 6,
+      "genuine_success": 0.0,
+      "random_phase_success": 0.0,
+      "random_gcd_success": 0.3870967741935484,
+      "genuine": {
+        "qubits": 12,
+        "cx": 27675,
+        "depth": 64509
+      },
+      "presolved": {
+        "qubits": 6,
+        "cx": 26,
+        "depth": 75,
+        "period_supplied": 10
+      },
+      "histogram_distance": 1.339067745576017e-13,
+      "trial_division_checks": 2
+    },
+    {
+      "n": 33,
+      "a": 5,
+      "bits": 6,
+      "genuine_success": 0.29100565017728486,
+      "random_phase_success": 0.0625,
+      "random_gcd_success": 0.3870967741935484,
+      "genuine": {
+        "qubits": 12,
+        "cx": 27885,
+        "depth": 64999
+      },
+      "presolved": {
+        "qubits": 6,
+        "cx": 26,
+        "depth": 75,
+        "period_supplied": 10
+      },
+      "histogram_distance": 1.3443413049429864e-13,
+      "trial_division_checks": 2
+    },
+    {
+      "n": 35,
+      "a": 2,
+      "bits": 6,
+      "genuine_success": 0.11475625909663509,
+      "random_phase_success": 0.03125,
+      "random_gcd_success": 0.30303030303030304,
+      "genuine": {
+        "qubits": 12,
+        "cx": 25617,
+        "depth": 59708
+      },
+      "presolved": {
+        "qubits": 6,
+        "cx": 11,
+        "depth": 35,
+        "period_supplied": 12
+      },
+      "histogram_distance": 1.0327849686575519e-13,
+      "trial_division_checks": 4
+    }
+  ],
+  "order": {
+    "params": {
+      "theta": 35.0,
+      "angle": 70.0,
+      "info": 0.0
+    },
+    "a_first": 0.909576022144496,
+    "a_second": 0.6400832497966178,
+    "qq": 5.551115123125783e-17,
+    "ab": [
+      0.6103346718019741,
+      0.29924135034252186,
+      0.029748577994643748,
+      0.06067539986086036
+    ],
+    "ba": [
+      0.6103346718019741,
+      0.029748577994643727,
+      0.2992413503425218,
+      0.06067539986086033
+    ],
+    "classical": {
+      "parameters": {
+        "A_first_yes": 0.909576022144496,
+        "B_after_Ayes": 0.6710100716628344,
+        "B_after_Ano": 0.32898992833716584,
+        "B_first_yes": 0.909576022144496,
+        "A_after_Byes": 0.6710100716628344,
+        "A_after_Bno": 0.3289899283371656
+      },
+      "ab": [
+        0.6103346718019741,
+        0.29924135034252186,
+        0.029748577994643748,
+        0.060675399860860305
+      ],
+      "ba": [
+        0.6103346718019741,
+        0.029748577994643727,
+        0.29924135034252186,
+        0.060675399860860325
+      ],
+      "qq": 0.0,
+      "max_error": 5.551115123125783e-17
+    },
+    "intervening_qq": -0.8516507396391464
+  }
+}

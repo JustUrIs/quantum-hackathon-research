@@ -1,0 +1,637 @@
+:root {
+  color-scheme: light;
+  --ink: #202f65;
+  --blue: #254cc8;
+  --pink: #b72e62;
+  --paper: #ebf0ff;
+  --line: #cbd4ed;
+  --muted: #5c6683;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: white;
+  color: var(--ink);
+  font:
+    16px/1.6 "Trebuchet MS",
+    "Segoe UI",
+    sans-serif;
+}
+main {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 48px;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+a {
+  color: inherit;
+}
+button {
+  border: 1px solid var(--blue);
+  background: var(--blue);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 3px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover {
+  filter: brightness(1.1);
+}
+button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 5px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  font:
+    700 36px/0.9 Georgia,
+    serif;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+.brand span {
+  display: block;
+  font:
+    12px/1.8 "Trebuchet MS",
+    sans-serif;
+  letter-spacing: 0;
+  margin-top: 5px;
+}
+.header-note {
+  font-size: 13px;
+  color: var(--muted);
+}
+.intro {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 52px 0 40px;
+}
+.edition {
+  display: block;
+  font-size: 13px;
+  color: var(--pink);
+  margin-bottom: 18px;
+}
+h1 {
+  font:
+    clamp(40px, 4.5vw, 65px) / 1.09 Georgia,
+    serif;
+  letter-spacing: -0.045em;
+  margin: 0 0 22px;
+}
+.intro p {
+  max-width: 64ch;
+  color: var(--muted);
+  font-size: 17px;
+}
+.fold-note {
+  min-width: 225px;
+  background: var(--paper);
+  padding: 26px;
+  font-size: 14px;
+  transform: rotate(3deg);
+  align-self: center;
+  border-radius: 0 30px 0 0;
+}
+.fold-note strong {
+  display: block;
+  font:
+    30px/1.2 Georgia,
+    serif;
+  margin: 16px 0;
+}
+.fold-note span {
+  font-size: 11px;
+}
+.experiment {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 0;
+  border: 1px solid var(--line);
+}
+.ballot-stage {
+  background: var(--paper);
+  padding: 28px;
+}
+.stage-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  gap: 18px;
+}
+.stage-top button {
+  font-size: 13px;
+}
+.ballots {
+  display: flex;
+  gap: 22px;
+  padding: 32px 6px 25px;
+  align-items: stretch;
+}
+.ballot {
+  background: white;
+  padding: 22px;
+  flex: 1;
+  position: relative;
+  border: 1px solid var(--line);
+  box-shadow: 5px 6px 0 #d3dcf4;
+  transform: rotate(-2deg);
+}
+.ballot.b {
+  transform: rotate(2deg);
+  color: var(--pink);
+}
+.ballots.reversed .a {
+  order: 2;
+  transform: rotate(2deg);
+}
+.ballots.reversed .b {
+  order: 1;
+  transform: rotate(-2deg);
+}
+.question-number {
+  font-size: 12px;
+}
+.letter {
+  position: absolute;
+  right: 20px;
+  top: 13px;
+  font:
+    42px Georgia,
+    serif;
+  opacity: 0.2;
+}
+.ballot h2 {
+  font:
+    29px/1.15 Georgia,
+    serif;
+  margin: 30px 0;
+}
+.ballot-option {
+  font-size: 18px;
+}
+.ballot p {
+  font-size: 11px;
+  margin-top: 20px;
+  color: var(--muted);
+}
+.headline {
+  padding: 22px 4px 10px;
+}
+.headline > span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.headline p {
+  font:
+    36px/1.2 Georgia,
+    serif;
+  letter-spacing: -0.035em;
+  margin: 8px 0;
+}
+.experiment aside {
+  padding: 30px;
+  border-left: 1px solid var(--line);
+}
+h2 {
+  font:
+    34px/1.17 Georgia,
+    serif;
+  letter-spacing: -0.025em;
+  margin: 0 0 20px;
+}
+.experiment aside h2 {
+  font-size: 24px;
+}
+label {
+  display: block;
+  font-size: 13px;
+  margin: 18px 0 5px;
+}
+output {
+  float: right;
+  color: var(--blue);
+  font-weight: 700;
+}
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--blue);
+  height: 24px;
+}
+#bloch {
+  display: block;
+  width: 100%;
+  max-height: 180px;
+  margin-top: 15px;
+}
+.note,
+#status {
+  font-size: 12px;
+  color: var(--muted);
+}
+#status[data-error] {
+  color: var(--pink);
+}
+.invariant {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  padding: 62px 0;
+}
+.invariant p {
+  color: var(--muted);
+  max-width: 59ch;
+}
+.qq {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  border-left: 4px solid var(--blue);
+  padding: 10px 18px;
+  margin: 25px 0;
+}
+.qq > span {
+  font-size: 12px;
+}
+.qq strong {
+  font:
+    32px Georgia,
+    serif;
+  white-space: nowrap;
+}
+h3 {
+  font:
+    24px/1.3 Georgia,
+    serif;
+  margin: 0 0 20px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+}
+th {
+  text-align: left;
+  font-weight: 400;
+  color: var(--muted);
+}
+td,
+th {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--line);
+}
+td:nth-child(2) {
+  color: var(--blue);
+}
+td:nth-child(3) {
+  color: var(--pink);
+}
+details {
+  margin: 18px 0;
+}
+summary {
+  cursor: pointer;
+  font-size: 14px;
+}
+details p {
+  font-size: 13px;
+}
+.empirical {
+  background: var(--paper);
+  padding: 38px;
+  border-radius: 8px;
+}
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+}
+.section-head label {
+  min-width: 200px;
+}
+.section-head select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: white;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  margin-top: 8px;
+}
+.poll-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 60px;
+}
+.poll-layout p {
+  font-size: 14px;
+  max-width: 62ch;
+}
+.poll-result {
+  border-left: 1px solid var(--line);
+  padding-left: 35px;
+}
+.poll-result > span {
+  font-size: 13px;
+}
+.poll-result strong {
+  font:
+    52px/1.6 Georgia,
+    serif;
+  display: block;
+  color: var(--pink);
+}
+.poll-result a {
+  font-size: 13px;
+}
+.pollbar {
+  margin: 20px 0;
+}
+.pollbar span {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.track {
+  height: 26px;
+  background: #d6dff5;
+  position: relative;
+}
+.fill {
+  height: 100%;
+  background: var(--blue);
+  min-width: 48px;
+  color: white;
+  text-align: right;
+  padding-right: 8px;
+  font-size: 12px;
+  line-height: 26px;
+}
+.challenger {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 70px;
+  padding: 60px 0;
+}
+.challenger p {
+  color: var(--muted);
+  max-width: 59ch;
+}
+.classical-result {
+  align-self: center;
+  border: 1px dashed var(--pink);
+  padding: 28px;
+}
+.classical-result strong {
+  font:
+    26px Georgia,
+    serif;
+}
+.classical-result p {
+  font-size: 13px;
+}
+.classical-result code {
+  font-size: 11px;
+  display: block;
+  line-height: 1.8;
+}
+.evidence {
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 44px 0;
+}
+.evidence p {
+  color: var(--muted);
+  max-width: 58ch;
+}
+.evidence button {
+  margin: 6px 8px 6px 0;
+}
+pre,
+textarea {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  max-height: 300px;
+  overflow: auto;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 15px;
+  border: 1px solid var(--line);
+  font:
+    12px/1.6 Consolas,
+    monospace;
+}
+textarea {
+  height: 180px;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  border-top: 1px solid var(--line);
+  padding: 25px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.tour-note {
+  padding: 16px 20px;
+  background: var(--paper);
+  border-left: 4px solid var(--pink);
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 1050px) {
+  main {
+    padding: 0 25px;
+  }
+  .fold-note {
+    display: none;
+  }
+  .experiment {
+    grid-template-columns: 1.6fr 1fr;
+  }
+  .ballots {
+    gap: 12px;
+  }
+  .ballot {
+    padding: 16px;
+  }
+  .ballot h2 {
+    font-size: 24px;
+  }
+  .header-note {
+    display: none;
+  }
+  .invariant,
+  .challenger {
+    gap: 35px;
+  }
+}
+@media (max-width: 800px) {
+  .experiment {
+    grid-template-columns: 1fr;
+  }
+  .experiment aside {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .invariant,
+  .poll-layout,
+  .challenger,
+  .evidence {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .poll-result {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 25px 0 0;
+  }
+  .poll-result strong {
+    font-size: 38px;
+  }
+  .section-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .intro {
+    padding: 35px 0 25px;
+  }
+  .empirical {
+    padding: 25px;
+  }
+  .ballot h2 {
+    font-size: 29px;
+  }
+  .invariant,
+  .challenger {
+    padding: 40px 0;
+  }
+}
+@media (max-width: 500px) {
+  main {
+    padding: 0 15px;
+  }
+  .brand {
+    font-size: 30px;
+  }
+  header button {
+    font-size: 11px;
+    max-width: 145px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  .ballot-stage {
+    padding: 18px;
+  }
+  .stage-top {
+    align-items: flex-start;
+  }
+  .stage-top button {
+    font-size: 11px;
+    max-width: 130px;
+  }
+  .ballot {
+    padding: 14px 10px;
+  }
+  .ballot h2 {
+    font-size: 23px;
+  }
+  .letter {
+    font-size: 32px;
+    right: 10px;
+  }
+  .question-number {
+    font-size: 10px;
+  }
+  .ballot-option {
+    font-size: 15px;
+  }
+  .headline p {
+    font-size: 29px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  .qq {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+section > *,
+article,
+aside,
+details {
+  min-width: 0;
+}
+button {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+pre,
+textarea {
+  min-width: 0;
+}
+.study {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 10px 0 50px;
+}
+.study p {
+  color: var(--muted);
+  max-width: 60ch;
+}
+#studyCounts {
+  height: 100px;
+}
+@media (max-width: 800px) {
+  .study {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "source": "https://jbusemey.pages.iu.edu/quantum/PNAS2014.pdf",
+  "citation": "Wang, Solloway, Shiffrin & Busemeyer (2014), PNAS, Table 1",
+  "provenance": "Published aggregate proportions transcribed from Table 1; no individual records or inferred sample sizes. Cells canonicalized as AyBy, AyBn, AnBy, AnBn in BOTH orders. Rounding can make totals differ from 1 by 0.0001; retain raw values for empirical display.",
+  "datasets": [
+    {"id":"clinton-gore","title":"Clinton / Gore","a":"Is Bill Clinton honest and trustworthy?","b":"Is Al Gore honest and trustworthy?","ab":[0.4899,0.0447,0.1767,0.2886],"ba":[0.5625,0.0255,0.1991,0.2130],"published_qq_p":"0.91","condition":"Successive questions, no inserted information. Near-zero QQ does not imply no order effect."},
+    {"id":"rose-jackson","title":"Rose / Jackson","a":"Should Pete Rose enter the Baseball Hall of Fame?","b":"Should Shoeless Joe Jackson enter the Baseball Hall of Fame?","ab":[0.3379,0.3241,0.0178,0.3202],"ba":[0.4156,0.1234,0.0671,0.3939],"published_qq_p":"<0.001","condition":"Information inserted between questions violates a premise of the simple QQ model. A useful failure case, not evidence against all quantum probability models."}
+  ]
+}

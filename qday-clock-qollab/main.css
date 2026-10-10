@@ -1,0 +1,504 @@
+:root {
+  color-scheme: light;
+  --bg: #eceef3;
+  --ink: #192137;
+  --muted: #586277;
+  --purple: #5841ba;
+  --red: #b9314f;
+  --line: #c8ceda;
+  --white: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font:
+    16px/1.6 "Segoe UI",
+    sans-serif;
+}
+main {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 48px;
+}
+a {
+  color: inherit;
+}
+button,
+select,
+input,
+textarea {
+  font: inherit;
+}
+button {
+  border: 1px solid var(--purple);
+  background: var(--purple);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover {
+  filter: brightness(1.1);
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 4px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--line);
+  gap: 30px;
+}
+.brand {
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+.brand span {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+nav {
+  display: flex;
+  gap: 30px;
+  font-size: 14px;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 70px;
+  padding: 54px 0 48px;
+  align-items: center;
+}
+.tag {
+  font-size: 14px;
+  color: var(--purple);
+  display: block;
+  margin-bottom: 14px;
+}
+h1 {
+  font:
+    clamp(46px, 5.3vw, 77px) / 1.07 Georgia,
+    serif;
+  letter-spacing: -0.05em;
+  margin: 0 0 24px;
+}
+.opening > p {
+  max-width: 56ch;
+  font-size: 17px;
+  color: var(--muted);
+}
+.scenario {
+  padding-top: 6px;
+  max-width: 480px;
+}
+label {
+  display: block;
+  font-size: 14px;
+  margin: 14px 0 3px;
+}
+output {
+  float: right;
+  font-weight: 700;
+  color: var(--purple);
+}
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--purple);
+  height: 23px;
+}
+.clock-panel {
+  text-align: center;
+  padding: 0 20px;
+}
+.clock-panel svg {
+  max-width: 430px;
+  width: 100%;
+}
+.clock-verdict {
+  font:
+    26px/1.25 Georgia,
+    serif;
+}
+.note {
+  font-size: 12px;
+  color: var(--muted);
+}
+.clock-panel .note {
+  max-width: 48ch;
+  margin: 14px auto 20px;
+}
+.resource-strip {
+  background: var(--ink);
+  color: white;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  border-radius: 6px;
+}
+.resource-strip h2 {
+  font:
+    22px/1.3 Georgia,
+    serif;
+  margin: 0 0 10px;
+}
+.resource-strip p {
+  font-size: 12px;
+  color: #bdc5d7;
+  margin: 0;
+}
+.resource-strip a {
+  border-left: 1px solid #566078;
+  padding-left: 30px;
+  text-decoration: none;
+}
+.resource-strip a:hover {
+  text-decoration: underline;
+}
+.resource-strip span {
+  display: block;
+  font-size: 12px;
+  color: #bdc5d7;
+}
+.resource-strip strong {
+  font:
+    36px/1.8 Georgia,
+    serif;
+  white-space: nowrap;
+}
+.lab {
+  padding: 66px 0;
+}
+.section-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+h2 {
+  font:
+    38px/1.15 Georgia,
+    serif;
+  letter-spacing: -0.03em;
+  margin: 0 0 18px;
+}
+.section-intro p {
+  max-width: 65ch;
+  color: var(--muted);
+}
+.lab-controls {
+  min-width: 165px;
+}
+.lab-controls span {
+  display: block;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.lab-controls select {
+  width: 100%;
+  background: white;
+  border: 1px solid var(--line);
+  padding: 8px;
+  font-size: 22px;
+}
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 24px;
+}
+.comparison article {
+  background: var(--white);
+  padding: 28px 32px;
+  border-top: 4px solid var(--purple);
+}
+.comparison .presolved {
+  border-color: var(--red);
+}
+.method {
+  font-size: 13px;
+  color: var(--purple);
+}
+.presolved .method {
+  color: var(--red);
+}
+h3 {
+  font:
+    26px/1.25 Georgia,
+    serif;
+  margin: 14px 0;
+}
+.comparison p {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 55ch;
+}
+.comparison dl {
+  display: flex;
+  gap: 45px;
+  margin: 24px 0;
+}
+.comparison dt {
+  font-size: 12px;
+  color: var(--muted);
+}
+.comparison dd {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: -0.04em;
+}
+.stamp {
+  font-size: 11px;
+  border: 1px solid var(--line);
+  padding: 7px 9px;
+  display: inline-block;
+}
+.spectra {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 42px;
+  margin: 26px 0;
+}
+.spectra svg {
+  width: 100%;
+}
+.spectra aside {
+  align-self: center;
+  padding: 28px;
+  background: #e2e5ed;
+  border-radius: 6px;
+}
+.spectra button {
+  font-size: 13px;
+  margin-top: 12px;
+}
+.baselines {
+  background: white;
+  padding: 25px 32px;
+}
+.barrow {
+  display: grid;
+  grid-template-columns: 210px 1fr 65px;
+  gap: 18px;
+  align-items: center;
+  margin: 18px 0;
+  font-size: 13px;
+}
+.bartrack {
+  background: #e7e9f0;
+  height: 17px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.barfill {
+  height: 100%;
+  background: var(--purple);
+}
+.barrow b {
+  text-align: right;
+}
+.methodology {
+  margin-top: 25px;
+  border-top: 1px solid var(--line);
+  padding: 20px 0;
+}
+.methodology p {
+  max-width: 90ch;
+  font-size: 14px;
+}
+.evidence {
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 45px 0;
+}
+.evidence p {
+  color: var(--muted);
+  max-width: 58ch;
+}
+.evidence button {
+  margin: 8px 8px 8px 0;
+}
+details {
+  margin: 15px 0;
+}
+summary {
+  cursor: pointer;
+}
+pre,
+textarea {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  max-height: 300px;
+  overflow: auto;
+  font:
+    12px/1.6 Consolas,
+    monospace;
+  background: white;
+  border: 1px solid var(--line);
+  padding: 15px;
+  color: var(--ink);
+}
+textarea {
+  height: 180px;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  border-top: 1px solid var(--line);
+  padding: 25px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+#status {
+  font-size: 12px;
+}
+#status[data-error] {
+  color: var(--red);
+}
+svg text {
+  font-family: "Segoe UI", sans-serif;
+  fill: var(--muted);
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 1000px) {
+  main {
+    padding: 0 25px;
+  }
+  .hero {
+    gap: 20px;
+  }
+  .resource-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+  .resource-strip > div {
+    grid-column: 1/-1;
+  }
+  .comparison dl {
+    gap: 24px;
+  }
+}
+@media (max-width: 700px) {
+  main {
+    padding: 0 16px;
+  }
+  nav {
+    display: none;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 35px;
+  }
+  .clock-panel {
+    padding: 0;
+  }
+  .clock-panel svg {
+    max-width: 330px;
+  }
+  .resource-strip {
+    padding: 24px;
+    gap: 16px;
+  }
+  .resource-strip a {
+    padding-left: 12px;
+  }
+  .resource-strip strong {
+    font-size: 27px;
+  }
+  .section-intro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .lab-controls {
+    width: 100%;
+  }
+  .comparison,
+  .spectra,
+  .evidence {
+    grid-template-columns: 1fr;
+  }
+  .comparison article {
+    padding: 24px;
+  }
+  .barrow {
+    grid-template-columns: 1fr 65px;
+    gap: 5px;
+  }
+  .barrow .bartrack {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .barrow b {
+    grid-row: span 2;
+  }
+  .baselines {
+    padding: 20px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 0;
+  }
+  .evidence {
+    gap: 20px;
+  }
+  .lab {
+    padding: 40px 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
+section > *,
+article,
+aside,
+details {
+  min-width: 0;
+}
+button {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+pre,
+textarea {
+  min-width: 0;
+}

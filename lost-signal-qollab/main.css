@@ -1,0 +1,448 @@
+:root {
+  color-scheme: dark;
+  --bg: #071f32;
+  --panel: #0d3249;
+  --text: #e6f4f3;
+  --muted: #a3beca;
+  --mint: #64d8cd;
+  --amber: #ffca70;
+  --line: #315165;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font:
+    16px/1.6 Bahnschrift,
+    "Segoe UI",
+    sans-serif;
+}
+main {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 48px;
+}
+a {
+  color: inherit;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  border: 1px solid var(--mint);
+  background: var(--mint);
+  color: #052b37;
+  padding: 11px 18px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+button:hover {
+  filter: brightness(1.12);
+}
+button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.quiet {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--line);
+}
+:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 5px;
+}
+.mast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  font-size: 20px;
+  font-weight: 700;
+}
+.brand span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0;
+  color: var(--muted);
+  font-weight: 400;
+}
+.edition {
+  font-size: 14px;
+  color: var(--muted);
+}
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 52px 0 40px;
+  gap: 40px;
+}
+h1 {
+  font-size: clamp(48px, 5.4vw, 80px);
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+  font-weight: 500;
+  margin: 0 0 20px;
+}
+.intro p {
+  max-width: 610px;
+  font-size: 18px;
+  color: var(--muted);
+}
+.flight {
+  min-width: 240px;
+  border-left: 1px solid var(--line);
+  padding-left: 32px;
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+}
+.flightline,
+small {
+  font-size: 13px;
+  color: var(--muted);
+}
+small {
+  margin-top: 14px;
+}
+.cockpit {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.map-panel {
+  position: relative;
+  background: #08283c;
+  padding: 22px;
+}
+.map-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.signal {
+  color: var(--mint);
+  font-size: 14px;
+}
+.signal.cut {
+  color: var(--amber);
+}
+#map {
+  display: block;
+  width: 100%;
+  max-height: 570px;
+}
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+}
+.key:before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  border-top: 3px solid currentColor;
+  margin-right: 7px;
+  vertical-align: middle;
+}
+.independent {
+  color: var(--amber);
+}
+.ghz {
+  color: var(--mint);
+}
+.route {
+  color: #d5e5ed;
+}
+.map-note {
+  font-size: 12px;
+  max-width: 60ch;
+  color: var(--muted);
+}
+.instruments {
+  padding: 30px 34px;
+  border-left: 1px solid var(--line);
+}
+h2 {
+  font-size: 25px;
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  margin: 0 0 20px;
+}
+label {
+  display: block;
+  font-size: 14px;
+  margin: 24px 0 6px;
+}
+output {
+  float: right;
+  color: var(--mint);
+}
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--mint);
+  height: 26px;
+}
+select {
+  width: 100%;
+  padding: 9px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+.readout {
+  margin: 28px 0 15px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+.readout > span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.readout strong {
+  display: block;
+  font:
+    54px/1.25 Consolas,
+    monospace;
+  color: var(--mint);
+  letter-spacing: -0.06em;
+}
+.readout p {
+  font-size: 14px;
+  margin: 4px 0;
+}
+.metrics {
+  font-size: 13px;
+}
+.metrics div {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.metrics dd {
+  margin: 0;
+  font-family: Consolas, monospace;
+}
+.note,
+#status {
+  font-size: 12px;
+  color: var(--muted);
+}
+#status[data-error] {
+  color: var(--amber);
+}
+.plots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  padding: 60px 0;
+}
+.plots p,
+.bird p,
+.evidence p {
+  color: var(--muted);
+  max-width: 64ch;
+}
+.plots svg,
+.bird svg {
+  width: 100%;
+  overflow: visible;
+}
+.grid {
+  stroke: var(--line);
+  stroke-dasharray: 2 5;
+}
+svg text {
+  font:
+    11px Consolas,
+    monospace;
+  fill: var(--muted);
+}
+.legend {
+  display: flex;
+  gap: 18px;
+  font-size: 12px;
+}
+.bird {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 45px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+}
+.bird h2 {
+  font-size: 36px;
+}
+.smalltitle {
+  font-size: 13px;
+  color: var(--mint);
+  display: block;
+  margin-bottom: 20px;
+}
+.evidence {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
+  padding: 48px 0;
+}
+.evidence button {
+  margin: 4px 8px 4px 0;
+}
+details {
+  margin: 14px 0;
+}
+summary {
+  cursor: pointer;
+}
+pre,
+textarea {
+  max-width: 100%;
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--line);
+  padding: 15px;
+  font:
+    12px/1.6 Consolas,
+    monospace;
+  overflow: auto;
+  max-height: 300px;
+}
+textarea {
+  height: 180px;
+}
+footer {
+  border-top: 1px solid var(--line);
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.story {
+  padding: 16px 22px;
+  border-left: 3px solid var(--amber);
+  background: var(--panel);
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  main {
+    padding: 0 24px;
+  }
+  .edition {
+    display: none;
+  }
+  .cockpit {
+    grid-template-columns: 1fr;
+  }
+  .instruments {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .flight {
+    display: none;
+  }
+  .plots,
+  .bird,
+  .evidence {
+    gap: 30px;
+  }
+  .intro {
+    padding-top: 35px;
+  }
+}
+@media (max-width: 600px) {
+  main {
+    padding: 0 16px;
+  }
+  .mast {
+    align-items: flex-start;
+  }
+  .mast button {
+    font-size: 12px;
+    max-width: 140px;
+  }
+  .brand {
+    font-size: 16px;
+  }
+  .plots,
+  .bird,
+  .evidence {
+    grid-template-columns: 1fr;
+    padding: 35px 0;
+  }
+  .map-panel {
+    padding: 14px;
+  }
+  .instruments {
+    padding: 24px;
+  }
+  .map-top {
+    font-size: 12px;
+  }
+  .map-top button {
+    font-size: 12px;
+    padding: 9px;
+  }
+  .intro p {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 0;
+  }
+  .legend {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+/* Grid children and long evidence labels must shrink on narrow viewports. */
+section > *,
+article,
+aside,
+details {
+  min-width: 0;
+}
+button {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+pre,
+textarea {
+  min-width: 0;
+}

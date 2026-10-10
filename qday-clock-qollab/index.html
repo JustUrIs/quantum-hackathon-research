@@ -1,0 +1,248 @@
+<main>
+  <header>
+    <a class="brand" href="#"
+      >Q-DAY CLOCK<span>Cryptographic exposure lab</span></a
+    >
+    <nav>
+      <a href="#lab">Inspect the algorithm</a
+      ><a href="#evidence">Check the evidence</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="opening">
+      <span class="tag">Your secrets have a shelf life.</span>
+      <h1>How much time<br />do you need?</h1>
+      <p>
+        A quantum computer does not need to exist today for data collected today
+        to be at risk later. Set a scenario. Compare it with how long your
+        information must stay private.
+      </p>
+      <div class="scenario">
+        <label for="horizon"
+          >Assumed attack horizon
+          <output id="horizonValue">10 years</output></label
+        ><input id="horizon" type="range" min="1" max="30" value="10" /><label
+          for="lifetime"
+          >Required confidentiality
+          <output id="lifetimeValue">10 years</output></label
+        ><input id="lifetime" type="range" min="1" max="30" value="10" /><label
+          for="migration"
+          >Time to migrate <output id="migrationValue">3 years</output></label
+        ><input id="migration" type="range" min="0" max="10" value="3" />
+      </div>
+    </div>
+    <div class="clock-panel">
+      <svg
+        id="clock"
+        viewBox="0 0 440 440"
+        role="img"
+        aria-label="Hypothetical migration headroom clock"
+      ></svg>
+      <p id="clockVerdict" class="clock-verdict"></p>
+      <p class="note">
+        You choose the attack horizon. This clock is a planning scenario, not a
+        forecast. Headroom = horizon − confidentiality lifetime − migration
+        time.
+      </p>
+      <button id="scenarioPreset" class="secondary">
+        Try a long-lived medical archive
+      </button>
+    </div>
+  </section>
+  <section class="resource-strip">
+    <div>
+      <h2>
+        Two published resource estimates.<br />Neither is a delivery date.
+      </h2>
+      <p>
+        RSA-2048, physical qubits under specific superconducting assumptions.
+        These estimates are not counts of today’s usable hardware.
+      </p>
+    </div>
+    <a href="https://arxiv.org/abs/1905.09749" target="_blank" rel="noreferrer"
+      ><span>Gidney &amp; Ekerå · 2019 / 2021</span><strong>20 million</strong
+      ><span>~8 hours · gate error 0.1%</span></a
+    ><a href="https://arxiv.org/abs/2505.15917" target="_blank" rel="noreferrer"
+      ><span>Gidney · 2025</span><strong>&lt;1 million</strong
+      ><span>&lt;1 week · gate error 0.1%</span></a
+    >
+  </section>
+  <section id="lab" class="lab">
+    <div class="section-intro">
+      <div>
+        <span class="tag">The evidence room</span>
+        <h2>Can a successful demo fool you?</h2>
+        <p>
+          Both circuits can show the same peaks. One builds modular
+          multiplication from N and a. The other receives the answer first.
+          Inspect what each actually did.
+        </p>
+      </div>
+      <div class="lab-controls">
+        <label for="modulus">Number to factor</label
+        ><select id="modulus">
+          <option value="15">15</option>
+          <option value="21">21</option>
+          <option value="33">33</option>
+          <option value="35">35</option></select
+        ><label for="base">Coprime base a</label
+        ><select id="base">
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="7">7</option>
+          <option value="8">8</option></select
+        ><span>6 phase bits · some bases fail honestly</span>
+      </div>
+    </div>
+    <div class="comparison">
+      <article class="genuine">
+        <span class="method">Modular order finding</span>
+        <h3>Build the question.</h3>
+        <p>
+          Public inputs N and a → controlled modular multiplication → inverse
+          QFT → continued fractions → checked factors.
+        </p>
+        <dl>
+          <div>
+            <dt>Qubits</dt>
+            <dd id="genuineQ">…</dd>
+          </div>
+          <div>
+            <dt>CX gates</dt>
+            <dd id="genuineCX">…</dd>
+          </div>
+          <div>
+            <dt>Depth</dt>
+            <dd id="genuineDepth">…</dd>
+          </div>
+        </dl>
+        <span class="stamp">No factor or period supplied to the builder</span>
+      </article>
+      <article class="presolved">
+        <span class="method">Pre-solved imitation</span>
+        <h3>Smuggle in the answer.</h3>
+        <p>
+          Compute the period classically → prepare a state with the expected
+          output distribution → measure. The peaks look convincing.
+        </p>
+        <dl>
+          <div>
+            <dt>Qubits</dt>
+            <dd id="fakeQ">…</dd>
+          </div>
+          <div>
+            <dt>CX gates</dt>
+            <dd id="fakeCX">…</dd>
+          </div>
+          <div>
+            <dt>Depth</dt>
+            <dd id="fakeDepth">…</dd>
+          </div>
+        </dl>
+        <span class="stamp" id="periodLeak">Period supplied: …</span>
+      </article>
+    </div>
+    <div class="spectra">
+      <div>
+        <h3>The phase spectrum</h3>
+        <svg
+          id="histogram"
+          viewBox="0 0 720 280"
+          role="img"
+          aria-label="Phase estimation probability histogram"
+        ></svg>
+        <p id="histogramNote" class="note"></p>
+      </div>
+      <aside>
+        <label for="mixture"
+          >Replace outputs with uniform noise
+          <output id="mixtureValue">0%</output></label
+        ><input
+          id="mixture"
+          type="range"
+          min="0"
+          max="1"
+          step="0.05"
+          value="0"
+        /><button id="randomize" class="secondary">
+          Replace all outputs with random bits
+        </button>
+        <p class="note">
+          An illustrative output ablation, not a gate-level noise model. The
+          same classical post-processing runs on both distributions.
+        </p>
+        <p id="status" role="status">Building the circuit…</p>
+      </aside>
+    </div>
+    <div class="baselines">
+      <h3>Give the classical side a fair hearing.</h3>
+      <div id="baselineBars"></div>
+      <p id="trialDivision"></p>
+      <p class="note">
+        Success per attempt, not runtime advantage. Random-phase baseline: 6
+        uniform bits through identical post-processing. Random-GCD baseline: a
+        uniform integer from 2 to N−1. Trial division is deterministic and wins
+        easily at these sizes.
+      </p>
+    </div>
+    <details class="methodology">
+      <summary>Exactly what this experiment can establish</summary>
+      <p>
+        This is a genuine small-N order-finding circuit, built from a reversible
+        multiplication truth table. Truth-table synthesis grows exponentially
+        and is not scalable Shor arithmetic. Gate counts describe this
+        implementation in an RX/RY/RZ/CX basis, not an optimized resource
+        estimate for RSA. The pre-solved imitation proves that an output
+        histogram alone does not certify the algorithm. Local execution is a
+        classical statevector simulation.
+      </p>
+      <p>
+        Continued-fraction convergents must pass a modular check before we
+        extract a nontrivial factor. We do not search all possible periods
+        inside the recovery path. Some measured phases fail; those failures
+        count.
+      </p>
+    </details>
+  </section>
+  <section id="evidence" class="evidence">
+    <div>
+      <h2>Run the circuit.<br />Keep the receipt.</h2>
+      <p>
+        One genuine order-finding circuit, sent once to the selected Qollab
+        backend. Start with N=15. Larger circuits can exceed remote simulator
+        gate or time limits.
+      </p>
+      <button id="runBackend">Run the backend check</button
+      ><button id="export" class="secondary">Export experiment evidence</button>
+    </div>
+    <div>
+      <p id="auditStatus" role="status">No backend job has run.</p>
+      <details id="auditDetails">
+        <summary>Backend snapshot and factor witnesses</summary>
+        <pre id="auditOutput">No evidence yet.</pre>
+      </details>
+      <details id="exportDetails">
+        <summary>Copy this experiment as JSON</summary>
+        <textarea
+          id="exportOutput"
+          readonly
+          aria-label="Exported experiment JSON"
+        ></textarea>
+      </details>
+    </div>
+  </section>
+  <footer>
+    <p>
+      Q-DAY CLOCK · MIT license<br />This effort is supported by Qollab &amp;
+      IonQ.
+    </p>
+    <p>
+      Forecasts change. Make your assumptions inspectable.<br /><a
+        href="https://csrc.nist.gov/projects/post-quantum-cryptography"
+        target="_blank"
+        rel="noreferrer"
+        >NIST post-quantum cryptography project</a
+      >
+    </p>
+  </footer>
+</main>

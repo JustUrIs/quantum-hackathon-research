@@ -1,0 +1,20 @@
+[
+  {
+    "project": "lost-signal",
+    "failure_shown": true,
+    "backend_evidence": null,
+    "submissions": 1
+  },
+  {
+    "project": "qday-clock",
+    "failure_shown": true,
+    "backend_evidence": null,
+    "submissions": 1
+  },
+  {
+    "project": "order",
+    "failure_shown": true,
+    "backend_evidence": null,
+    "submissions": 1
+  }
+]

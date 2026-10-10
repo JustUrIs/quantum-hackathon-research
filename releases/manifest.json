@@ -1,0 +1,52 @@
+{
+  "lost-signal-qollab": {
+    "archive": "lost-signal-qollab.zip",
+    "bytes": 20339,
+    "sha256": "721da51b4bd053423524d680c79ef1a730aed11a8b096d48cc2d287f9fa5c751",
+    "files": {
+      "README.md": "e6caabc9a65a5a204509c222769dfa8799c9b0e8b98278934b7e7c858c3842a7",
+      "LICENSE": "db8322cfc1f62fbeb83fed4b1ac3ae0840bb27500f4b0585aa3f51bced63dc67",
+      "index.html": "6076d697881f577a4e9f0096159085329467aad26f7cade7b095538857196062",
+      "main.js": "5dd505b4310f392aea267c15754a86c1277ae1f455b7b66df09ef98247fe9a0a",
+      "main.css": "2c5e05f80f229710d98bf594b52a3d8168773d970c30098658d3429e8a249324",
+      "runtime.js": "f5187abe5fd959817b5eeab5009a22b57a09ca5910d9e213a564d89ac879dea2",
+      "requirements.txt": "10771a1ba0cb4f6b6cad2daa2193319ab136bde50e113c554c6b443ac09d1f25",
+      "lostsignal/__init__.py": "978cf69a15a834b788ea63d35b35546d9a96acb2c1298fffff134b4b70e50720",
+      "lostsignal/service.py": "733035a9cb0f032790dab6670722dcfa2713ec17098d2e9e6f42d1d94186beae",
+      "data/route.json": "9139295c1d30b5895f95042f4024e4eede8e9143c4dbbc24e3ea4b7ce29b215f"
+    }
+  },
+  "qday-clock-qollab": {
+    "archive": "qday-clock-qollab.zip",
+    "bytes": 18070,
+    "sha256": "bd1c229d3e74fc2afa9ea7617196d64cb1e3b159ac5b016d1ab80b58b7b95d5a",
+    "files": {
+      "README.md": "5d86b18ea58d77c273731b3c309fec24408b902a766ed55a6dc534767b6077b6",
+      "LICENSE": "db8322cfc1f62fbeb83fed4b1ac3ae0840bb27500f4b0585aa3f51bced63dc67",
+      "index.html": "5e43d139bb90f13cf5708c674e8c561ab5e14623bcfff4fecd4f7fa3b8ff87fd",
+      "main.js": "64276154f4b9e2702b95b2a3e10cc70f096b6dba3ad0b2b2d07e362be8809736",
+      "main.css": "1e8868f07f71262ead04c384a09395e1173653069de43f54f76a713d02d0f269",
+      "runtime.js": "f5187abe5fd959817b5eeab5009a22b57a09ca5910d9e213a564d89ac879dea2",
+      "requirements.txt": "10771a1ba0cb4f6b6cad2daa2193319ab136bde50e113c554c6b443ac09d1f25",
+      "qday/__init__.py": "570fceba242d73ea5ce7294757d130f82155657507ff67c4b3f8e66204011a8e",
+      "qday/service.py": "a6b42398785b222f0f0c8eb03ecfd3b3101d633834693238510fa86e00772b49"
+    }
+  },
+  "order-qollab": {
+    "archive": "order-qollab.zip",
+    "bytes": 19647,
+    "sha256": "42a5a5f7cc2e0c90dadba3317a014c0b2d1389c68cf4da5c680181f518fa7479",
+    "files": {
+      "README.md": "40006f2868482a87f67783dfc74e805fa5ae282fe735349a742324edd0d1bf79",
+      "LICENSE": "db8322cfc1f62fbeb83fed4b1ac3ae0840bb27500f4b0585aa3f51bced63dc67",
+      "index.html": "da317e48a68cb4562e67fa25ca8908d03bcae5c311de56ad17b33bb18e50cd2a",
+      "main.js": "be0677703c0d9b6c58454e40ab073ebdd3b00705247a865df0fcbf8c4017b08b",
+      "main.css": "e97169d887623386f60c350891f9878327af169500c14f997d0b050d9a6fb105",
+      "runtime.js": "f5187abe5fd959817b5eeab5009a22b57a09ca5910d9e213a564d89ac879dea2",
+      "requirements.txt": "10771a1ba0cb4f6b6cad2daa2193319ab136bde50e113c554c6b443ac09d1f25",
+      "orderlab/__init__.py": "a12ae68618790d13cd9ef9212b782bc0729e43706ed60bd9fd3a53992882e450",
+      "orderlab/service.py": "b57533db22de5acdb0c6dfe2fc5768e36a68204b8c3483bd0ab15253d1e45088",
+      "data/polls.json": "54e61eba06e998ae26b37958ca099f67a610fcfcc4f959b746d34eb8326213cf"
+    }
+  }
+}

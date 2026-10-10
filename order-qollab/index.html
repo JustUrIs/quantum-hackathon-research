@@ -1,0 +1,226 @@
+<main>
+  <header>
+    <a class="brand" href="#">ORDER<span>An experiment in asking</span></a
+    ><span class="header-note">Same questions. Different sequence.</span
+    ><button id="tour" class="secondary">Take the 60-second experiment</button>
+  </header>
+  <section class="intro">
+    <div>
+      <span class="edition">The question before the question</span>
+      <h1>You can change the answer<br />without changing a word.</h1>
+      <p>
+        Ask two questions. Swap their order. Watch a model’s response change,
+        then check the pattern against published survey data.
+      </p>
+    </div>
+    <div class="fold-note">
+      An interactive study of<br /><strong
+        >measurement<br />&amp; context.</strong
+      ><span>Quantum probability. Classical people.</span>
+    </div>
+  </section>
+  <p class="tour-note" id="tourText" hidden></p>
+  <section class="experiment">
+    <div class="ballot-stage">
+      <div class="stage-top">
+        <span>Model laboratory · synthetic responses</span
+        ><button id="swap">Swap the question order</button>
+      </div>
+      <div class="ballots" id="ballots">
+        <article class="ballot a">
+          <span class="question-number" id="aNumber">Asked first</span
+          ><span class="letter">A</span>
+          <h2>Do you trust<br />the institution?</h2>
+          <span class="ballot-option">○ Yes &nbsp; ○ No</span>
+          <p>A measurement along one axis.</p>
+        </article>
+        <article class="ballot b">
+          <span class="question-number" id="bNumber">Asked second</span
+          ><span class="letter">B</span>
+          <h2>Do you trust<br />its leadership?</h2>
+          <span class="ballot-option">○ Yes &nbsp; ○ No</span>
+          <p>A measurement along a different axis.</p>
+        </article>
+      </div>
+      <div class="headline">
+        <span id="headlineContext">A asked first</span>
+        <p id="headline">… say yes to A.</p>
+        <span id="headlineDelta">Preparing the experiment.</span>
+      </div>
+    </div>
+    <aside>
+      <h2>Build a belief state.</h2>
+      <label for="belief"
+        >Initial state angle <output id="beliefValue">35°</output></label
+      ><input id="belief" type="range" min="0" max="180" value="35" /><label
+        for="angle"
+        >Angle between the questions <output id="angleValue">70°</output></label
+      ><input id="angle" type="range" min="0" max="180" value="70" /><label
+        for="information"
+        >Extra rotation between questions
+        <output id="informationValue">0°</output></label
+      ><input id="information" type="range" min="0" max="180" value="0" /><svg
+        id="bloch"
+        viewBox="0 0 280 200"
+        role="img"
+        aria-label="Two measurement axes and the initial belief state"
+      ></svg>
+      <p class="note">
+        These are model parameters, not psychological measurements. Zero angle
+        makes the question measurements compatible.
+      </p>
+      <p id="status" role="status">Starting Qiskit…</p>
+    </aside>
+  </section>
+  <section class="invariant">
+    <div>
+      <h2>A pattern you can try to break.</h2>
+      <p>
+        Compare the probability of opposite answers in the two orders. Simple
+        projective measurements predict the difference, q, is zero when no new
+        transformation intervenes.
+      </p>
+      <div class="qq">
+        <span>q = P(yes/no or no/yes | AB)<br />− P(yes/no or no/yes | BA)</span
+        ><strong id="qq">…</strong>
+      </div>
+      <p id="qqVerdict"></p>
+      <button id="breakQQ" class="secondary">Insert new information</button>
+    </div>
+    <div>
+      <h3>The full response, not just a headline.</h3>
+      <div id="jointTable"></div>
+      <p class="note">
+        Cells always refer to A and B, even after their order changes. This
+        prevents a misleading comparison of transposed tables.
+      </p>
+      <details>
+        <summary>How six qubits record two orders</summary>
+        <p>
+          Each order uses one state qubit and two record qubits. Rotate to a
+          question’s basis, copy its answer into a record with CNOT, and rotate
+          back. Keep both records. Final measurements reproduce sequential
+          projection probabilities without measuring halfway through a circuit.
+        </p>
+      </details>
+    </div>
+  </section>
+  <section class="empirical">
+    <div class="section-head">
+      <div>
+        <span class="edition">From the published record</span>
+        <h2>People have been asked this.</h2>
+      </div>
+      <label for="poll"
+        >Survey example<select id="poll">
+          <option value="clinton-gore">Clinton / Gore</option>
+          <option value="rose-jackson">Rose / Jackson</option>
+        </select></label
+      >
+    </div>
+    <div class="poll-layout">
+      <div>
+        <h3 id="pollTitle">…</h3>
+        <p id="pollQuestions"></p>
+        <div id="pollChart"></div>
+        <p id="pollCondition" class="note"></p>
+      </div>
+      <div class="poll-result">
+        <span>Observed QQ difference</span><strong id="pollQQ">…</strong>
+        <p id="pollP"></p>
+        <p class="note">
+          Published aggregate proportions, rounded as in the source. These are
+          separate respondent groups. We do not infer individual opinion
+          changes.
+        </p>
+        <a
+          href="https://jbusemey.pages.iu.edu/quantum/PNAS2014.pdf"
+          target="_blank"
+          rel="noreferrer"
+          >Read Wang et al. (2014), Table 1</a
+        >
+      </div>
+    </div>
+  </section>
+  <section class="challenger">
+    <div>
+      <span class="edition">The classical challenger</span>
+      <h2>Does the pattern prove<br />a quantum mind?</h2>
+      <p>
+        A classical machine that remembers which question came first can
+        reproduce these distributions. Press the button to construct it.
+        Matching QQ does not establish uniquely quantum cognition.
+      </p>
+      <button id="classical">Let a classical model match it</button>
+    </div>
+    <div id="classicalResult" class="classical-result">
+      <p>
+        Our challenger uses order-dependent transition probabilities. We fit it
+        to the displayed synthetic distributions. A fit is not an independent
+        prediction.
+      </p>
+    </div>
+  </section>
+  <section class="study">
+    <div>
+      <span class="edition">Use it on your own experiment</span>
+      <h2>Audit a questionnaire.</h2>
+      <p>
+        Randomly assign independent respondents to AB or BA. Paste the four
+        counts for each order below. In both rows, the columns must mean
+        A-yes/B-yes, A-yes/B-no, A-no/B-yes, A-no/B-no.
+      </p>
+      <label for="studyCounts"
+        >Two rows: AB first, BA second. Synthetic example prefilled.</label
+      ><textarea id="studyCounts" spellcheck="false">
+250, 50, 100, 100
+280, 30, 120, 70</textarea
+      ><button id="auditStudy">Audit these counts</button>
+      <p class="note">
+        Aggregate counts only. No names or respondent records. Computation runs
+        in the local Qollab Python runtime.
+      </p>
+    </div>
+    <div id="studyResult" class="classical-result" role="status">
+      Your result will include the order effect on A, the QQ difference and
+      approximate 95% confidence intervals. The prefilled counts are synthetic,
+      not a published study.
+    </div>
+  </section>
+  <section class="evidence">
+    <div>
+      <h2>Ask a quantum circuit.</h2>
+      <p>
+        Run both orders in one six-qubit circuit on the selected Qollab backend.
+        Compare the measured q with its sampling uncertainty. Those are circuit
+        outputs, not human survey responses.
+      </p>
+      <button id="runBackend">Run the backend check</button
+      ><button id="export" class="secondary">Export experiment evidence</button>
+    </div>
+    <div>
+      <p id="auditStatus" role="status">No backend job has run.</p>
+      <details id="auditDetails">
+        <summary>Backend counts and uncertainty</summary>
+        <pre id="auditOutput">No evidence yet.</pre>
+      </details>
+      <details id="exportDetails">
+        <summary>Copy this experiment as JSON</summary>
+        <textarea
+          id="exportOutput"
+          readonly
+          aria-label="Exported experiment JSON"
+        ></textarea>
+      </details>
+    </div>
+  </section>
+  <footer>
+    <p>
+      ORDER · MIT license<br />This effort is supported by Qollab &amp; IonQ.
+    </p>
+    <p>
+      Use the experiment to audit how you ask.<br />Changing a sequence can
+      change what you measure.
+    </p>
+  </footer>
+</main>

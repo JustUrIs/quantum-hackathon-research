@@ -1,0 +1,48 @@
+{
+  "backend": "BasicSimulator \u00b7 local harness",
+  "recorded_at": "2026-10-10T05:24:36.500Z",
+  "params": {
+    "n": 15,
+    "a": 2,
+    "bits": 6,
+    "mix": 0
+  },
+  "report": {
+    "shots": 1024,
+    "successes": 503,
+    "rate": 0.4912109375,
+    "evidence": [
+      {
+        "y": 48,
+        "count": 236,
+        "period_candidate": 4,
+        "factors": [
+          3,
+          5
+        ]
+      },
+      {
+        "y": 16,
+        "count": 267,
+        "period_candidate": 4,
+        "factors": [
+          3,
+          5
+        ]
+      }
+    ],
+    "counts": {
+      "100000": 254,
+      "110000": 236,
+      "010000": 267,
+      "000000": 267
+    },
+    "params": {
+      "n": 15,
+      "a": 2,
+      "bits": 6,
+      "mix": 0
+    },
+    "scope": "Small-N order finding; no cryptographic key attack or resource extrapolation"
+  }
+}

@@ -1,0 +1,211 @@
+<main>
+  <header class="mast">
+    <a class="brand" href="#"
+      >LOST SIGNAL<span>South Atlantic field station</span></a
+    ><span class="edition">An experiment in quantum sensing</span
+    ><button id="story" class="quiet">Start the 60-second mission</button>
+  </header>
+  <section class="intro">
+    <div>
+      <h1>When the satellites<br />go quiet.</h1>
+      <p>
+        You still have the Earth’s magnetic field. Choose a sensor, spend the
+        same resources, and find where entanglement helps you see more.
+      </p>
+    </div>
+    <div class="flight">
+      <span>Buenos Aires</span
+      ><span class="flightline">↓ &nbsp; 2,400 km south</span
+      ><span>Ushuaia</span
+      ><small>WMM2025 · 10 km altitude · model date 2026.775</small>
+    </div>
+  </section>
+  <p id="storyText" class="story" hidden></p>
+  <section class="cockpit" aria-label="Navigation experiment">
+    <div class="map-panel">
+      <div class="map-top">
+        <span id="gpsLabel" class="signal">GPS available</span
+        ><button id="gps" aria-pressed="false">Cut the GPS signal</button>
+      </div>
+      <svg
+        id="map"
+        viewBox="0 0 680 660"
+        role="img"
+        aria-label="Schematic route from Buenos Aires to Ushuaia with projected angular uncertainty"
+      ></svg>
+      <div class="map-legend">
+        <span class="key independent">Independent probes</span
+        ><span class="key ghz">Entangled probes</span
+        ><span class="key route">Planned route</span>
+      </div>
+      <p class="map-note">
+        Illustrative 1σ corridor from a fixed heading error, assuming 1 rad of
+        sensor phase = 1 rad of heading. This is not a navigation solution.
+      </p>
+    </div>
+    <aside class="instruments">
+      <h2>Choose your instrument</h2>
+      <label for="probes"
+        >Probes per reading <output id="probesValue">4</output></label
+      ><input
+        id="probes"
+        type="range"
+        min="1"
+        max="6"
+        value="4"
+        step="1"
+      /><label for="noise"
+        >Dephasing strength η <output id="noiseValue">0.08</output></label
+      ><input
+        id="noise"
+        type="range"
+        min="0"
+        max="0.8"
+        value="0.08"
+        step="0.01"
+      /><label for="shots">Repeated readings</label
+      ><select id="shots">
+        <option value="64">64 readings</option>
+        <option value="256" selected>256 readings</option>
+        <option value="1024">1,024 readings</option>
+      </select>
+      <div class="readout">
+        <span>Precision gain at fixed interrogation time</span
+        ><strong id="gain">…</strong>
+        <p id="verdict">Preparing the sensor model.</p>
+      </div>
+      <dl class="metrics">
+        <div>
+          <dt>Independent σφ</dt>
+          <dd id="sql">…</dd>
+        </div>
+        <div>
+          <dt>Entangled σφ</dt>
+          <dd id="ghz">…</dd>
+        </div>
+        <div>
+          <dt>Same probe interactions</dt>
+          <dd id="resources">…</dd>
+        </div>
+      </dl>
+      <p id="crossing" class="note"></p>
+      <button id="breakSensor" class="quiet">
+        Find the point where it stops helping
+      </button>
+      <p id="status" role="status">Starting Qiskit…</p>
+    </aside>
+  </section>
+  <section class="plots">
+    <article>
+      <h2>A sharper fringe. A narrower margin.</h2>
+      <p>
+        GHZ parity responds N times faster to phase. Independent probes remain
+        more robust when coherence decays. Both curves use the same noise
+        parameter.
+      </p>
+      <svg
+        id="fringes"
+        role="img"
+        aria-label="Independent and entangled sensor response versus phase"
+      ></svg>
+      <p class="legend">
+        <span class="independent">Independent: probability of zero</span
+        ><span class="ghz">GHZ: probability of even parity</span>
+      </p>
+    </article>
+    <article>
+      <h2>Let noise choose the winner.</h2>
+      <p>
+        Above 1×, entanglement improves the local precision bound. Below 1×, the
+        independent baseline wins. Random outputs have zero phase information.
+      </p>
+      <svg
+        id="noisePlot"
+        role="img"
+        aria-label="Precision gain versus independent dephasing strength"
+      ></svg>
+      <p class="note">
+        Local Fisher-information bound at each protocol’s quadrature, with a
+        calibrated phase prior. No global phase estimator or hardware
+        sensitivity claim.
+      </p>
+    </article>
+  </section>
+  <section class="bird">
+    <div>
+      <span class="smalltitle">A different kind of compass</span>
+      <h2>Could a molecule<br />sense a direction?</h2>
+      <p>
+        Two electron spins start in a singlet. An anisotropic coupling to a
+        nuclear spin makes the singlet yield depend on the field’s direction.
+        Rotate the field in a three-spin model inspired by radical-pair
+        research.
+      </p>
+      <button id="isotropic" class="quiet" aria-pressed="false">
+        Remove the directional coupling
+      </button>
+      <p id="birdStatus" role="status">Loading the molecular experiment…</p>
+    </div>
+    <div>
+      <svg
+        id="birdPlot"
+        role="img"
+        aria-label="Toy radical-pair singlet yield versus field angle"
+      ></svg>
+      <p class="note">
+        Static-field toy model, mixed nuclear spin, 1 μs reaction lifetime. It
+        illustrates directional response, not a biological compass or an RF
+        disruption experiment.
+      </p>
+    </div>
+  </section>
+  <section class="evidence">
+    <div>
+      <h2>Put the circuit on the record.</h2>
+      <p>
+        Send one circuit to your selected Qollab backend. It checks GHZ parity
+        and an independent probe at a fixed phase of 0.23 rad. The noise slider
+        belongs to the local model; the backend supplies its own noise.
+      </p>
+      <button id="runBackend">Run the backend check</button
+      ><button id="export" class="quiet">Export experiment evidence</button>
+    </div>
+    <div>
+      <p id="auditStatus" role="status">No backend job has run.</p>
+      <details id="auditDetails">
+        <summary>Backend snapshot and counts</summary>
+        <pre id="auditOutput">No evidence yet.</pre>
+      </details>
+      <details id="exportDetails">
+        <summary>Copy this experiment as JSON</summary>
+        <textarea
+          id="exportOutput"
+          aria-label="Exported experiment JSON"
+          readonly
+        ></textarea>
+      </details>
+    </div>
+  </section>
+  <footer>
+    <p>
+      LOST SIGNAL · Qiskit experiment · MIT license<br />This effort is
+      supported by Qollab &amp; IonQ.
+    </p>
+    <p>
+      <a
+        href="https://www.ncei.noaa.gov/products/world-magnetic-model"
+        target="_blank"
+        rel="noreferrer"
+        >NOAA/BGS field model</a
+      >
+      ·
+      <a
+        href="https://arxiv.org/abs/quant-ph/9707014"
+        target="_blank"
+        rel="noreferrer"
+        >The noise caveat</a
+      ><br />Simulation makes the assumptions visible. Field validation is the
+      next experiment.
+    </p>
+  </footer>
+</main>
