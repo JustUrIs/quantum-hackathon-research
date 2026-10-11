@@ -18,13 +18,13 @@
   },
   "darkroom-qollab": {
     "archive": "darkroom-qollab.zip",
-    "bytes": 15546,
-    "sha256": "e7a9234eda452d8551172128f97284e74bab5a9bc859e87eb12f903cdc22cf97",
+    "bytes": 15663,
+    "sha256": "2fcff130b36cc53c3787fc581ca6a3315869060664140500a7835712260a1659",
     "files": {
       "README.md": "ec8fc421d33569e912b5ccb44722d0eddfc4ab9212c4682343e23952b4ea2d35",
       "LICENSE": "177588a97835b39e3109a4ddb9530b6b6ec56964bd14b1cd144bfb5de74dab96",
-      "index.html": "1d5c35e5467520fe417044a1d51f71b60871e669d4980a3a7a15b5fa28c2ab02",
-      "main.js": "fce5316bd8f17b4fd18e564b0cea548098e851456e6418a803954e23e4dcdfd4",
+      "index.html": "ee609b31cec6f6362f82fcbfae53f5cd74798a4b05357da14e2a43e646993ddf",
+      "main.js": "2283e13e5236734830aa08525a0c6de91b33a5fc5f7f18508e91a7070a5bf2e4",
       "main.css": "33e5533cc66e1691e17d36eafcc798ccfae8820976edd25b0a8a721017aa0925",
       "requirements.txt": "418c24e63c42a5b58c70525345da42678896038932de5a92a729817367996d6d",
       "darkroom/__init__.py": "57bbefbe1f9021421b345659f198d95bf0a5180c63801aa717e2ca6f6b099a96",

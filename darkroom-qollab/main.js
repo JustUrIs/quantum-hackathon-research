@@ -23,28 +23,29 @@ function text(x, y, label, klass, parent) {
 
 function drawInterferometer(n) {
   const svg = $("interferometer"); svg.replaceChildren();
+  node("title", { id: "opticTitle" }).textContent = "Two photon paths and two possible detector outputs";
+  node("desc", { id: "opticDesc" }).textContent = "An absorbing object can block the upper arm. A surviving photon at the present detector reveals the object without absorption.";
   const defs = node("defs");
   const pattern = node("pattern", { id: "blockedHatch", width: 9, height: 9, patternTransform: "rotate(45)", patternUnits: "userSpaceOnUse" }, defs);
   node("rect", { width: 9, height: 9, fill: "#f0755b" }, pattern);
   node("line", { x1: 0, y1: 0, x2: 0, y2: 9, stroke: "#101820", "stroke-width": 3 }, pattern);
   // The split arms and recombination are the main visual explanation.
-  node("path", { d: "M56 194H164L204 92H480L528 194M204 296H480L528 194M528 194L676 118M528 194L676 270", class: "light-path" });
+  node("path", { d: "M56 194H164L204 92H480L528 194M164 194L204 296H480L528 194M528 194L676 118M528 194L676 270", class: "light-path" });
   node("path", { d: "M204 92H480", class: "object-path" });
   node("circle", { cx: 56, cy: 194, r: 12, class: "source" });
-  text(56, 230, "PROBE", "diagram-label");
+  text(56, 230, "PHOTON", "diagram-label");
   node("rect", { x: 151, y: 181, width: 26, height: 26, transform: "rotate(45 164 194)", class: "splitter" });
   text(164, 239, "SPLIT", "diagram-label");
   node("rect", { x: 515, y: 181, width: 26, height: 26, transform: "rotate(45 528 194)", class: "splitter" });
   text(528, 239, "RECOMBINE", "diagram-label");
   node("rect", { x: 326, y: 67, width: 72, height: 50, rx: 3, class: "object" });
+  node("rect", { x: 333, y: 75, width: 58, height: 34, rx: 2, fill: "url(#blockedHatch)", class: "absorber" });
   text(362, 89, "OBJECT", "object-word"); text(362, 105, "PRESENT?", "object-word small");
   const passXs = Array.from({ length: n }, (_, i) => 218 + (i * 244) / Math.max(1, n - 1));
   passXs.forEach((x, i) => {
     node("circle", { cx: x, cy: 92, r: 5, class: "pass-dot" });
     text(x, 69, String(i + 1).padStart(2, "0"), "pass-number");
   });
-  // A small, quiet absorber marker makes the dangerous arm legible.
-  node("rect", { x: 333, y: 75, width: 58, height: 34, rx: 2, fill: "url(#blockedHatch)", class: "absorber" });
   node("circle", { cx: 685, cy: 113, r: 18, class: "detector detector-present" });
   node("circle", { cx: 685, cy: 275, r: 18, class: "detector detector-absent" });
   text(685, 153, "PRESENT", "detector-label");
