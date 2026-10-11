@@ -27,6 +27,11 @@ Python builder, Qiskit local checker and independent browser ideal simulator.
   and mobile screenshots were inspected.
 - Browser Python uses pinned Pyodide 0.28.3; the runtime was actually downloaded
   and used in Chromium. The browser does not install Qiskit.
+- Public GitHub Pages deployment at `/quantum-hackathon-research/qcp/` returned
+  HTTP 200. A real browser/Pyodide submission of A's reference passed 124/124
+  cases from that HTTPS origin after commit efb2002.
+- A focused runtime-download failure test returned JE and left the virtual-round
+  penalty at zero. Infrastructure failures are separate from student errors.
 
 The Python/Qiskit reference checks and JS comparisons use local ideal simulation.
 They do not establish performance or correctness on noisy hardware.
