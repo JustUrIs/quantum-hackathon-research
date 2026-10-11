@@ -1,0 +1,79 @@
+"""Deterministic, public fixtures and original problem cards for QCP Arena."""
+import itertools
+import json
+import random
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1] / "qcp-qollab"
+cases = {"bv": [], "dj": [], "grover": []}
+for n in range(2, 7):
+    for secret in range(1 << n):
+        for kind in ("bv", "grover"):
+            cases[kind].append({"kind": kind, "n": n, "secret": secret, "sample": n == 3 and secret == 5})
+    size = 1 << n
+    for bit in (0, 1):
+        cases["dj"].append({"kind": "dj", "n": n, "table": [bit] * size, "sample": n == 3 and bit == 1})
+    if n <= 3:
+        marked_sets = itertools.combinations(range(size), size // 2)
+    else:
+        rng = random.Random(7100 + n)
+        marked_sets = [sorted(rng.sample(range(size), size // 2)) for _ in range(16)]
+    for index, marked in enumerate(marked_sets):
+        marked = set(marked)
+        cases["dj"].append({"kind": "dj", "n": n, "table": [int(x in marked) for x in range(size)], "sample": n == 3 and index == 4})
+
+template = "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n, oracle):\n    qc = QuantumCircuit(n + 1)\n    # Write your algorithm here.\n    # Apply the supplied oracle with: oracle(qc, range(n), n)\n    return qc\n"
+bv = "from qiskit import QuantumCircuit\n\ndef solve(n, oracle):\n    qc = QuantumCircuit(n + 1)\n    qc.x(n)\n    qc.h(range(n + 1))\n    oracle(qc, range(n), n)\n    qc.h(range(n))\n    return qc\n"
+grover = "from qiskit import QuantumCircuit\nimport math\n\ndef solve(n, oracle):\n    qc = QuantumCircuit(n + 1)\n    qc.x(n)\n    qc.h(range(n + 1))\n    rounds = int(math.pi / 4 * math.sqrt(2 ** n))\n    for step in range(rounds):\n        oracle(qc, range(n), n)\n        qc.h(range(n))\n        qc.x(range(n))\n        qc.h(n - 1)\n        qc.mcx(list(range(n - 1)), n - 1)\n        qc.h(n - 1)\n        qc.x(range(n))\n        qc.h(range(n))\n    return qc\n"
+common = {
+    "interface": "Implement solve(n, oracle) and return QuantumCircuit(n + 1). Qubits 0..n-1 hold x; qubit n is y. oracle(qc, range(n), n) appends U_f: |x,y> → |x,y XOR f(x)>. The judge starts all qubits at zero and reads the input register at the end. Do not add measurements.",
+    "encoding": "Little endian: qubit 0 is the least significant bit. Displayed bit strings put that bit on the right. The oracle is a symbolic instruction: solve receives no secret, truth table or oracle decomposition.",
+    "limits": "2 ≤ n ≤ 6. Exactly n + 1 qubits. At most 512 instructions and logical depth 256. Circuit-building budget: 12,000 interpreter steps per n. Source limit: 16,000 characters. These are local practice limits, not QPU timings.",
+}
+cards = [
+    {"id": "bv", "letter": "A", "title": "The sealed switchboard", "points": 100,
+     "tag": "Recover a hidden string", "difficulty": "Entry",
+     "story": "A sealed switchboard contains n switches. You cannot inspect their positions. For any mask x, its sensor returns the parity of the selected switches. Recover every switch position using at most one oracle call.",
+     "task": "The hidden string s defines f(x) = parity(x AND s). Construct a circuit whose final input-register measurement returns s with probability at least 1 − 10⁻⁹, for every tested s. A different hidden string is used in each fixture.",
+     "input": "The builder receives n and the supplied parity oracle. The hidden string s is not an input to solve. This is an oracle problem, not a conventional stdin program.",
+     "output": "Return the circuit. The judge interprets the measured input register as the recovered integer s.",
+     "query_limit": "At most 1 oracle call.", "sample": "n = 3; sample oracle f(x) = parity(x AND 5). Expected readout: 101 with probability 1. The sample secret is disclosed only to explain this example; submissions must work for every fixture.",
+     "comparison": "Exact recovery: n classical queries versus 1 quantum query in this oracle model. Preparing the oracle and loading data are separate costs. This is a query advantage, not a measured CPU speedup.",
+     "coverage": "All 124 secrets across n = 2..6 are tested exhaustively.",
+     "editorial": "Prepare the target in |−> with X then H. Put the input register in a uniform superposition. One oracle call writes the parity into relative phases. Applying H to the input register turns those phases into s. For each bit, the interference isolates the corresponding switch position. The final target can remain in |−>.",
+     "reference": "https://learning.quantum.ibm.com/course/fundamentals-of-quantum-algorithms/quantum-query-algorithms", "solution": bv},
+    {"id": "dj", "letter": "B", "title": "The factory inspector", "points": 200,
+     "tag": "Decide under a promise", "difficulty": "Intermediate",
+     "story": "A factory tests every n-bit batch identifier with a hidden rule. Either every identifier gets the same result, or exactly half pass. You are promised one of these two cases. Decide which factory you are inspecting with one oracle call.",
+     "task": "For a constant oracle, the final input register must be zero with probability at least 1 − 10⁻⁹. For a balanced oracle, it must be nonzero with that probability. You do not need to recover the truth table.",
+     "input": "The builder receives n and an oracle promised to be constant or balanced. No truth table is provided to solve.",
+     "output": "Return the circuit. Readout 00…0 means CONSTANT. Every other readout means BALANCED. For a balanced oracle there is no single required nonzero bit string.",
+     "query_limit": "At most 1 oracle call.", "sample": "n = 3. Oracle f(x) = 1 for every x: expected 000 (CONSTANT). A second sample is balanced: the total probability of nonzero readouts must be 1.",
+     "comparison": "Exact deterministic classical decision needs up to 2^(n−1) + 1 queries; the quantum algorithm needs 1. Important: a randomized classical algorithm can distinguish these cases with few queries and bounded error. This is not an exponential advantage over every classical method.",
+     "coverage": "All constant and balanced tables for n = 2,3; both constants and 16 seeded balanced tables per n = 4,5,6. Larger coverage is sampled, not exhaustive.",
+     "editorial": "Use phase kickback as in problem A. The amplitude of the all-zero readout after the final Hadamards is the average of (−1)^f(x). A constant function makes that average +1 or −1; a balanced function makes it zero. Many different balanced functions produce different nonzero outcomes. Testing only affine parity oracles would miss important mistakes; this suite includes non-affine balanced tables.",
+     "reference": "https://quantum.cloud.ibm.com/learning/en/modules/computer-science/deutsch-jozsa", "solution": bv},
+    {"id": "grover", "letter": "C", "title": "One marked address", "points": 300,
+     "tag": "Amplify a search result", "difficulty": "Advanced",
+     "story": "Exactly one address among 2^n addresses opens a vault. The oracle checks an address but does not reveal the marked one. Build a circuit that finds it reliably within a square-root query budget.",
+     "task": "The hidden address s defines f(x) = 1 exactly when x = s. Return a circuit whose final input-register readout equals s with probability at least 0.90 for every fixture. The input register is checked after the target is marginalized out.",
+     "input": "The builder receives n and the supplied equality oracle. The marked address s is not available to solve.",
+     "output": "Return the circuit. The judge reads the input register as the proposed marked address. You are evaluated by its exact ideal success probability, not by a lucky sampled shot.",
+     "query_limit": "At most floor((π/4) × sqrt(2^n)) oracle calls: 1, 2, 3, 4, 6 for n = 2,3,4,5,6.",
+     "sample": "n = 3; sample marked address is 5 (101). Two Grover iterations yield probability 0.9453125 for 101. More iterations are not automatically better.",
+     "comparison": "For M = 2^n candidates, classical randomized search needs Θ(M) queries for a fixed high success probability; Grover needs Θ(sqrt(M)). This assumes coherent oracle access and does not include database loading. The browser simulator itself has no quantum speed advantage.",
+     "coverage": "All 124 marked addresses across n = 2..6 are tested exhaustively.",
+     "editorial": "Prepare a uniform input register and |−> target. The equality oracle flips the marked amplitude's phase. A diffusion operation reflects amplitudes about their mean, increasing the marked probability. Repeat floor((π/4) × sqrt(2^n)) times for these sizes. The rotation can overshoot, so unbounded repetition is a wrong solution.",
+     "reference": "https://quantum.cloud.ibm.com/learning/en/modules/computer-science/grovers", "solution": grover},
+]
+for card in cards:
+    card.update(common)
+    card["template"] = template
+    card["test_count"] = len(cases[card["id"]])
+catalog = {"version": "qcp-1.0", "contest": {"title": "QCP Round 001", "duration_minutes": 60,
+    "penalty_minutes": 20, "scoring": "Solved count, then elapsed minutes plus 20 per rejected judged submission before the first AC. CE is not penalized. Run does not affect standings.",
+    "scope": "Individual virtual round. One local participant; no global rating or trusted server standings."}, "problems": cards}
+ROOT.mkdir(exist_ok=True)
+for name, value in (("cases.json", cases), ("catalog.json", catalog)):
+    (ROOT / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+print({k: len(v) for k, v in cases.items()})

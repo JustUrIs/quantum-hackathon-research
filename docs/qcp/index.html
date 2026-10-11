@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Three quantum programming problems. Write Python, test circuits, and compete in a reproducible virtual round.">
+  <title>QCP Arena — Quantum programming contests</title>
+  <link rel="stylesheet" href="./main.css">
+  <script type="module" src="./main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to problem</a>
+  <div class="page">
+    <header>
+      <a class="brand" href="#problem/bv" aria-label="QCP Arena home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>QCP <b>Arena</b><small>Quantum programming contests</small></span></a>
+      <div class="runtime"><span id="mode">Browser practice</span><small>No account. No QPU credits.</small></div>
+    </header>
+    <nav aria-label="Main navigation"><a href="#catalog">Problemset</a><a href="#contest">Round 001</a><a href="#submissions">Submissions</a><a href="#handbook">Handbook</a><a href="#about">Judge specification</a></nav>
+    <div class="layout">
+      <main id="content" tabindex="-1"></main>
+      <aside>
+        <section class="panel"><h2>QCP Round 001</h2><p>Three problems. One hour.</p><p id="roundState">Virtual participation</p><a class="button secondary" href="#contest">Open round</a></section>
+        <section class="panel"><h2>Problems</h2><div id="problemLinks"></div></section>
+        <section class="panel quiet"><h2>The judging model</h2><p>Oracle-query advantages, checked on small ideal simulations.</p><p>Public tests. Local results. No global rating.</p><a href="#about">Read the rules</a></section>
+        <section class="panel quiet"><h2>Run with Qiskit</h2><p>The Qollab package runs the same problems with a Qiskit judge.</p><a href="https://github.com/JustUrIs/quantum-hackathon-research/raw/refs/heads/main/releases/qcp-qollab.zip">Download Qollab ZIP</a><p class="small">Upload the files, select a free local simulator, and press Run. The code editor then evaluates your solutions locally with Qiskit.</p></section>
+      </aside>
+    </div>
+    <footer><span>QCP Arena · Hackathon edition</span><span id="footerSource">Browser execution uses Python and a separate ideal simulator.</span><a href="./README.md">Documentation</a></footer>
+  </div>
+</body>
+</html>

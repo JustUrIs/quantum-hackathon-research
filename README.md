@@ -1,5 +1,7 @@
 # Quantum experiments you can question
 
+**Current build: [QCP Arena](qcp-qollab/README.md)** — three quantum programming problems, a reproducible Qiskit judge and an individual virtual round. [Open the browser edition](https://justuris.github.io/quantum-hackathon-research/qcp/), or [download the Qollab package](releases/qcp-qollab.zip). Browser and Qollab execution sources are labeled separately. Live Qollab execution remains to be verified.
+
 **Six independent Qollab project candidates, led by Guardia Grid.** The current plan prioritizes four submissions, including DARKROOM; the remaining candidates are reserves. Each makes a quantum idea tangible and exposes the assumptions behind its result.
 
 **This effort is supported by Qollab & IonQ.**

@@ -1,0 +1,5058 @@
+{
+  "bv": [
+    {
+      "kind": "bv",
+      "n": 2,
+      "secret": 0,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 2,
+      "secret": 1,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 2,
+      "secret": 2,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 2,
+      "secret": 3,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 3,
+      "secret": 0,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 3,
+      "secret": 1,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 3,
+      "secret": 2,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 3,
+      "secret": 3,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 3,
+      "secret": 4,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 3,
+      "secret": 5,
+      "sample": true
+    },
+    {
+      "kind": "bv",
+      "n": 3,
+      "secret": 6,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 3,
+      "secret": 7,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 0,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 1,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 2,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 3,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 4,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 5,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 6,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 7,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 8,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 9,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 10,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 11,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 12,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 13,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 14,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 4,
+      "secret": 15,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 0,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 1,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 2,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 3,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 4,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 5,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 6,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 7,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 8,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 9,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 10,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 11,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 12,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 13,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 14,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 15,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 16,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 17,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 18,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 19,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 20,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 21,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 22,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 23,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 24,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 25,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 26,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 27,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 28,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 29,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 30,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 5,
+      "secret": 31,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 0,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 1,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 2,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 3,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 4,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 5,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 6,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 7,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 8,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 9,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 10,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 11,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 12,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 13,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 14,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 15,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 16,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 17,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 18,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 19,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 20,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 21,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 22,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 23,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 24,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 25,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 26,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 27,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 28,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 29,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 30,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 31,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 32,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 33,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 34,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 35,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 36,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 37,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 38,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 39,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 40,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 41,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 42,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 43,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 44,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 45,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 46,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 47,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 48,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 49,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 50,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 51,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 52,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 53,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 54,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 55,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 56,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 57,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 58,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 59,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 60,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 61,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 62,
+      "sample": false
+    },
+    {
+      "kind": "bv",
+      "n": 6,
+      "secret": 63,
+      "sample": false
+    }
+  ],
+  "dj": [
+    {
+      "kind": "dj",
+      "n": 2,
+      "table": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 2,
+      "table": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 2,
+      "table": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 2,
+      "table": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 2,
+      "table": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 2,
+      "table": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 2,
+      "table": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 2,
+      "table": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sample": true
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sample": true
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 3,
+      "table": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 4,
+      "table": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 5,
+      "table": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "sample": false
+    },
+    {
+      "kind": "dj",
+      "n": 6,
+      "table": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sample": false
+    }
+  ],
+  "grover": [
+    {
+      "kind": "grover",
+      "n": 2,
+      "secret": 0,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 2,
+      "secret": 1,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 2,
+      "secret": 2,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 2,
+      "secret": 3,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 3,
+      "secret": 0,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 3,
+      "secret": 1,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 3,
+      "secret": 2,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 3,
+      "secret": 3,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 3,
+      "secret": 4,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 3,
+      "secret": 5,
+      "sample": true
+    },
+    {
+      "kind": "grover",
+      "n": 3,
+      "secret": 6,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 3,
+      "secret": 7,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 0,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 1,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 2,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 3,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 4,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 5,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 6,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 7,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 8,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 9,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 10,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 11,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 12,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 13,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 14,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 4,
+      "secret": 15,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 0,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 1,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 2,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 3,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 4,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 5,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 6,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 7,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 8,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 9,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 10,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 11,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 12,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 13,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 14,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 15,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 16,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 17,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 18,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 19,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 20,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 21,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 22,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 23,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 24,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 25,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 26,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 27,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 28,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 29,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 30,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 5,
+      "secret": 31,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 0,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 1,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 2,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 3,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 4,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 5,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 6,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 7,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 8,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 9,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 10,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 11,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 12,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 13,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 14,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 15,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 16,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 17,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 18,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 19,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 20,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 21,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 22,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 23,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 24,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 25,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 26,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 27,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 28,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 29,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 30,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 31,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 32,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 33,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 34,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 35,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 36,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 37,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 38,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 39,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 40,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 41,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 42,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 43,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 44,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 45,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 46,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 47,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 48,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 49,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 50,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 51,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 52,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 53,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 54,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 55,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 56,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 57,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 58,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 59,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 60,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 61,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 62,
+      "sample": false
+    },
+    {
+      "kind": "grover",
+      "n": 6,
+      "secret": 63,
+      "sample": false
+    }
+  ]
+}

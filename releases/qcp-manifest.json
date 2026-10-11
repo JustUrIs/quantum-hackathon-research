@@ -1,0 +1,19 @@
+{
+  "archive": "qcp-qollab.zip",
+  "bytes": 29105,
+  "sha256": "33cbd1766eec1f29378fe1eb1d1d9809be5ecda7991a1f49109146af2926b6ca",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "index.html",
+    "main.css",
+    "main.js",
+    "runtime.js",
+    "qollab-main.js",
+    "catalog.json",
+    "cases.json",
+    "qcp/__init__.py",
+    "qcp/service.py",
+    "qcp/solver.py"
+  ]
+}
