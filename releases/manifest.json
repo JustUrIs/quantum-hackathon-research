@@ -1,4 +1,38 @@
 {
+  "ambulancias-qollab": {
+    "archive": "ambulancias-qollab.zip",
+    "bytes": 22013,
+    "sha256": "ae01bca4842b1e8b3b0eb16ebb5ef2224a85b2a76684ceb124666b644122a8b7",
+    "files": {
+      "README.md": "dfbe6b60115b7dbf262bd1187442db919227699f26625aa5e8379be756f4d79b",
+      "LICENSE": "db8322cfc1f62fbeb83fed4b1ac3ae0840bb27500f4b0585aa3f51bced63dc67",
+      "index.html": "e2c2d01d00c2f614f5b43777e6f348b93c2c6b59ad7f1c24859ed2f98e955acd",
+      "main.js": "1ac67ea92ddd662f657157041bb7c6acd3893e793fc2cbee40e306e8438e1d56",
+      "main.css": "2f766cf9c0f6a8998a67b21dd087971249e8396215b1c01b5fb14855ed405092",
+      "requirements.txt": "247cac82bee90f66c969c1966d2ed2e953e746037593bba521fe878b0c84aa40",
+      "ambulancia/__init__.py": "122ae691cd0cab0e387a0e8dfd8033308ced1e27428306781e00d86b937e7765",
+      "ambulancia/engine.py": "9ccc13e84a1131d7377d9a23eaab7c2c5c9b352bc5d4fd057af71eb0f20b84b8",
+      "data/caba_signals.json": "51817d40686fae22bc654b1e4f5ec881d86e15e54d292941764d666408739c33",
+      "data/README.md": "3a17dec1bc7d27d6c5e33f6629a09e4a6c5788af5c06173c81c0ccc2ffe60343"
+    }
+  },
+  "impostor-qollab": {
+    "archive": "impostor-qollab.zip",
+    "bytes": 26895,
+    "sha256": "4377385e531c9b8cdf51bfadc0c4155cb2c877202e188f0eb17a72d6e92b9461",
+    "files": {
+      "README.md": "6f1ebabdb0a65c5fa76f518654a0ceffc79693180af9eff45748610a444f4c39",
+      "LICENSE": "d451b26ca702a4ee1e3b1c1012d5bf1e0b2a86fd111e1b592030adc3e7f271d0",
+      "index.html": "a591f2362b81b4ce3271bc54e5e59058a07f84a807a3ef621792a0a611aefa68",
+      "main.js": "2bdf6e4a77bb2efd69724dde4312816ac53cb323d2b213f5b0330347eb142c5d",
+      "main.css": "37c97136820959ce2db870832a7876e5958666865d6a067ce7927a24ef5b6a24",
+      "requirements.txt": "1d279980e392720d622c4d18154dea4f53d1bfe2373bd4c6953bff42b1759dcc",
+      "impostor/__init__.py": "7be54902db520db87028ed2b72a6651222056121d95eba30e17ed42e4903f269",
+      "impostor/games.py": "8343f09a7828497702b2c7e40255dd3f7463c1d90b014e7e04d10102b24f6f44",
+      "impostor/service.py": "0ef1392877c73d83bf7e24cd70f222332d324be39f945d8ed55127067ed1f640",
+      "data/zip_n12.json": "0464fb92f8fd372bdfa8e1a3520263e062d6e7c1f222bc1174a75784b001dba0"
+    }
+  },
   "lost-signal-qollab": {
     "archive": "lost-signal-qollab.zip",
     "bytes": 20339,

@@ -1,21 +1,22 @@
 # Quantum experiments you can question
 
-Four projects for the Qollab × IonQ hackathon. Each experience makes a quantum idea tangible and exposes the assumptions behind its result.
+**Five independent Qollab projects, led by Guardia Grid.** Each makes a quantum idea tangible and exposes the assumptions behind its result.
 
 **This effort is supported by Qollab & IonQ.**
 
-**[Try the three interactive browser previews](https://justuris.github.io/quantum-hackathon-research/)** — no account or installation required. These use analytical browser calculations and precomputed Qiskit references; they do not run Python or submit quantum jobs. Download the full Qollab projects below to execute their circuits.
+[Try the interactive browser previews](https://justuris.github.io/quantum-hackathon-research/) — no account or installation required. The previews do not run Python or submit quantum jobs. Download a full project package to run its Qiskit circuit on Qollab.
 
-| Project | The experiment | Source / project page | Upload package |
+| Project | The experiment | Project page | Qollab upload package |
 |---|---|---|---|
-| IMPOSTOR | Try to reproduce constrained quantum-game correlations | [Existing project](impostor-qollab/README.md) | `impostor-qollab/` |
+| **GUARDIA GRID · CABA** | Robust emergency-capacity planning with public injury-crash signals; QAOA, classical baselines and single-site outages | [Main project](ambulancias-qollab/README.md) | [ZIP](releases/ambulancias-qollab.zip) |
+| IMPOSTOR | Reproduce constrained quantum-game correlations | [Project](impostor-qollab/README.md) | [ZIP](releases/impostor-qollab.zip) |
 | LOST SIGNAL | Compare sensor precision, then let noise choose the winner | [Project and physics](lost-signal-qollab/README.md) | [ZIP](releases/lost-signal-qollab.zip) |
 | Q-DAY CLOCK | Tell genuine order finding from an imitation given the answer | [Project and algorithm](qday-clock-qollab/README.md) | [ZIP](releases/qday-clock-qollab.zip) |
-| ORDER | Swap questions, inspect QQ, and audit your own AB/BA counts | [Project and evidence](order-qollab/README.md) | [ZIP](releases/order-qollab.zip) |
+| ORDER | Swap questions, inspect QQ, and audit AB/BA counts | [Project and evidence](order-qollab/README.md) | [ZIP](releases/order-qollab.zip) |
 
-## Run the three new projects locally
+## Run locally
 
-Requires Python 3.11+ with Qiskit 2.5.2. Tested here with Python 3.13.
+Requires Python 3.11+ with Qiskit 2.5.2.
 
 ```sh
 python -m pip install -r requirements-dev.txt
@@ -23,7 +24,7 @@ python -m playwright install chromium
 python tools/serve.py
 ```
 
-Open [the local launcher](http://127.0.0.1:8766/). Each Qollab project is self-contained; the local server bridges JavaScript to Python for development. On Qollab, upload one project's files with `index.html` and `main.js` at the root. Do not open those files directly from disk.
+Open [the local launcher](http://127.0.0.1:8766/). The local harness bridges JavaScript to Python and uses BasicSimulator. It is a development check, not Qollab or IonQ evidence. On Qollab, upload one project's files with `index.html` and `main.js` at the root. Keep its Python package and data folder.
 
 ```sh
 python -m unittest discover -s tests -v
@@ -32,28 +33,19 @@ python tools/benchmark_projects.py
 python tools/package_projects.py
 ```
 
-## What has been verified
+## Guardia Grid
 
-Local checks cover physical identities, reversible arithmetic, independent probability calculations, explicit classical baselines, count decoding, input validation and browser interactions at desktop and mobile widths. [Exact benchmarks](artifacts/benchmarks.json), [browser results](artifacts/ui-results.json), and local backend evidence in `artifacts/` preserve the source of each result. [Validation report](research/07_VALIDATION.md).
+Guardia Grid is the lead submission: a concrete capacity-planning question, built from public Buenos Aires City data, with explicit uncertainty and a quantum circuit judges can run. It is a scenario-planning demonstrator, not a dispatch recommendation or evidence of quantum advantage. Its [README](ambulancias-qollab/README.md) explains the method, data provenance, limitations, Qollab run steps, and the next operational datasets needed for a credible pilot.
 
-**Qollab/Pyodide and remote IonQ execution are not yet verified.** The projects follow Qollab's documented bridge and one-job model. Local execution and a GitHub push do not replace publication, the public video or the captain's final submission.
+The other four projects remain independent submissions with distinct questions and demos.
 
-## See the interfaces
+## Evidence and delivery
 
-[LOST SIGNAL demo](https://justuris.github.io/quantum-hackathon-research/lost-signal/) · [Q-DAY CLOCK demo](https://justuris.github.io/quantum-hackathon-research/qday-clock/) · [ORDER demo](https://justuris.github.io/quantum-hackathon-research/order/).
+The repository's saved browser screenshots and local backend artifacts are labeled with their source. **Qollab/Pyodide and remote IonQ execution must be verified on Qollab before claiming those results.** A local calculation, ZIP, or GitHub push does not replace the project publication, public 2?3 minute video, or the captain's final team submission.
 
-The public previews pass 100 numerical reference comparisons, mobile layout checks and export provenance checks. Rebuild with `python tools/build_previews.py` and verify with `python tools/test_previews.py`. After a UI-only change, `--ui-only` reuses the existing reference data; regenerate fully after changing any scientific model. GitHub Pages serves `main:/docs`.
+- [Delivery checklist](launch/00_ENTREGA.md)
+- [Guardia Grid judge demo script](launch/06_GUARDIA_GRID_PITCH.md)
+- [Project pitches and demos](launch/)
+- [Validation report](research/07_VALIDATION.md)
 
-[LOST SIGNAL](artifacts/lost-signal-desktop.png) · [Q-DAY CLOCK](artifacts/qday-clock-desktop.png) · [ORDER](artifacts/order-desktop.png). Mobile screenshots are alongside them. Every export distinguishes local calculations from a captured backend snapshot.
-
-## Delivery and story
-
-- [Entrega: pasos y pendientes](launch/00_ENTREGA.md).
-- [LOST SIGNAL: guion de 2:30, objeciones y piloto comercial](launch/01_LOST_SIGNAL_PITCH.md).
-- [Q-DAY CLOCK: guion de 2:30, objeciones y piloto comercial](launch/02_QDAY_PITCH.md).
-- [ORDER: guion de 2:30, objeciones y piloto comercial](launch/03_ORDER_PITCH.md).
-- [Contexto reconstruido y correcciones al brief](research/06_BUILD_DECISIONS.md).
-
-The original idea research remains under `research/`. Treat its unverified forecasts and novelty claims as historical proposals; the project READMEs document the implemented scope. Quantum metrology, order finding and quantum cognition all have substantial prior work. These projects offer educational experiments and audit tools, not new scientific theorems or demonstrated commercial quantum advantage.
-
-MIT-licensed project code. Existing IMPOSTOR work supplied the bridge pattern; the three new engines, interfaces and launch materials extend the repository during the hackathon, with AI assistance. External sources and data provenance are credited in each project.
+All project code is MIT-licensed. Dataset licenses and attribution remain separate and are listed per project. Work was prepared with AI assistance.

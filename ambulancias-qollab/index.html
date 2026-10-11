@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f4ef" />
+    <meta name="description" content="Stress-test hypothetical emergency staging coverage across Buenos Aires with real crash records, classical baselines and QAOA." />
+    <title>Guardia Grid — move the plan before the call</title>
+    <link rel="stylesheet" href="./main.css" />
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Guardia Grid home"><span class="brand-mark">G</span><span>GUARDIA GRID <i>/ CABA</i></span></a>
+      <div class="top-meta"><span class="status-led"></span><span>DECISION LAB · 107</span><span class="sep"></span><span>QISKIT × IONQ SIMULATOR</span></div>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy"><p class="eyebrow">Emergency response · capacity planning</p>
+          <h1>Move the plan<br />before the call.</h1>
+          <p class="lede">A historical hotspot is not a forecast. A map is not a dispatch plan. Guardia Grid lets you test where a small reserve fleet would cover more injury-crash signals, then asks what happens when one position goes dark.</p>
+          <div class="hero-note"><span class="note-number">01</span><span><strong>The decision</strong> Place a limited standby fleet across a city. Protect coverage when one unit is unavailable.</span></div>
+        </div>
+        <aside class="hero-stat"><div class="stat-top"><span>THE SCENARIO</span><span>01 / CABA</span></div><div class="big-stat" id="eventCount">—</div><p>unique injury-crash events in the bundled historical signal</p><div class="stat-rule"></div><p class="stat-foot">2019–2025 · Buenos Aires City open data<br />One proxy for emergency demand, not all 107 calls.</p></aside>
+      </section>
+
+      <section class="workbench" aria-label="Coverage planning experiment">
+        <div class="workbench-head"><div><p class="eyebrow">01 — Set the shift</p><h2>Change the conditions.</h2></div><div class="live-state"><span></span><b id="status" role="status" aria-live="polite">Loading bundled city data…</b></div></div>
+        <div class="workspace">
+          <div class="map-panel">
+            <div class="panel-head"><div><span class="panel-label">THE CITY / SPATIAL SIGNAL</span><h3>CABA coverage model</h3></div><span class="map-stamp">2010 BOUNDARY · SCHEMATIC CELLS</span></div>
+            <svg id="cityMap" viewBox="0 0 760 560" role="img" aria-labelledby="mapTitle mapDesc"><title id="mapTitle">Buenos Aires injury-crash signal and hypothetical staging points</title><desc id="mapDesc">A gridded historical signal map. Circular markers are representative locations drawn from census geography, not confirmed ambulance bases or available lots.</desc></svg>
+            <div class="map-legend"><span><i class="legend-dot heat"></i>Historical signal</span><span><i class="legend-dot candidate"></i>Candidate point</span><span><i class="legend-dot selected"></i>QAOA sample</span><span><i class="legend-dot gap"></i>Uncovered weight</span></div>
+            <p class="map-caption">The highlighted markers are hypothetical census-radio representatives. We have not verified roads, lots, depots, ambulance positions, or drive times.</p>
+          </div>
+          <aside class="controls-panel">
+            <div class="control-block"><label class="control-label" for="scenario">DEMAND SIGNAL</label><select id="scenario"><option value="history">All injury-crash events · 2019–25</option><option value="night">Night events · 19:00–06:59</option><option value="recent">Recent year · 2025</option><option value="severe">Severe-weighted events</option></select><p class="hint">A selectable historical slice. It does not predict tomorrow's calls.</p></div>
+            <div class="control-block"><label class="control-label" for="units">AVAILABLE STANDBY UNITS</label><div class="step-control"><button type="button" id="unitsDown" aria-label="Use one fewer unit">−</button><output id="unitsValue" for="units">3</output><button type="button" id="unitsUp" aria-label="Use one more unit">+</button><span class="units-tail">of 8 candidate points</span></div><input type="hidden" id="units" value="3" /></div>
+            <div class="control-block"><div class="label-row"><label class="control-label" for="radius">STRAIGHT-LINE COVERAGE RADIUS</label><output id="radiusValue" for="radius">3.0 km</output></div><input id="radius" type="range" min="1" max="6" value="3" step="0.5" /><div class="range-ticks"><span>1 km</span><span>6 km</span></div><p class="hint">This is distance, not estimated road travel time.</p></div>
+            <div class="control-block"><div class="label-row"><label class="control-label" for="outage">ONE UNIT UNAVAILABLE</label><output id="outageValue" for="outage">30%</output></div><input id="outage" type="range" min="0" max="100" value="30" step="10" /><div class="range-ticks"><span>Plan for normal service</span><span>Prioritize resilience</span></div><p class="hint">The optimizer scores the normal plan and the average loss when any selected point goes offline.</p></div>
+            <div class="control-foot"><span class="control-index">MODEL 8Q / FIXED-FLEET XY MIXER</span><span>NO PENALTY QUBITS</span></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="results" aria-labelledby="resultsHeading">
+        <div class="results-intro"><div><p class="eyebrow">02 — Red-team the answer</p><h2 id="resultsHeading">The classical plan gets a vote.</h2></div><p>Every method uses the same city cells, radius, fleet size and single-outage score. Exact search checks every valid combination. QAOA offers a sampled candidate. The device does not get to pick its own opponent.</p></div>
+        <div class="scoreboard" id="scoreboard" aria-live="polite"><div class="score-wait">Calculating the scenario…</div></div>
+        <div class="result-footer"><span><b>WHAT THE CIRCUIT DOES</b> A 2-layer QAOA circuit searches only combinations that contain exactly K units. Its cost phase scores the complete coverage function, including the outage case.</span><span><b>WHAT THIS IS NOT</b> No dispatch recommendation, patient outcome, quantum speedup, or measured drive time.</span></div>
+      </section>
+
+      <section class="proof-grid">
+        <article class="proof-card quantum-card"><p class="eyebrow">03 — Run the quantum circuit</p><h2>One backend job.<br />The same hard question.</h2><p>The built-in browser simulation supplies an ideal local statevector reference. Choose <i>Run</i> on Qollab and the button below submits one measured Qiskit circuit to the simulator selected by the judge. Backend counts and the ideal local prediction remain separate.</p><button class="run-button" id="runBackend" type="button">Run QAOA on the selected Qollab simulator <span aria-hidden="true">↗</span></button><p id="auditStatus" class="audit-status" role="status" aria-live="polite">A Qollab backend is required for this separate measurement.</p><details><summary>What will the backend measure?</summary><p>A single 8-qubit, 2-layer QAOA circuit. All qubits are measured in one job. Shot counts, settings, and the exact sampled score are shown below.</p><pre id="auditOutput"></pre></details></article>
+        <article class="proof-card evidence-card"><p class="eyebrow">DATA / METHOD / LIMITS</p><h2>Receipts before recommendations.</h2><div class="evidence-row"><span>01</span><div><b>Published events</b><p>Unique injury-crash records, point-in-polygon filtered to CABA census radios. A collision signal, not every medical emergency.</p></div></div><div class="evidence-row"><span>02</span><div><b>Explicit assumptions</b><p>Historical severity weights, representative candidate points and straight-line radii are visible modeling choices, not official policy.</p></div></div><div class="evidence-row"><span>03</span><div><b>Classical accountability</b><p>Greedy, greedy plus one-site swaps and exact enumeration run on the same objective. QAOA's ideal result is a local statevector prediction.</p></div></div><div class="evidence-row"><span>04</span><div><b>Useful next dataset</b><p>Operational call locations, dispatch logs, verified base/depot lots, road-network travel times, and unit availability by hour.</p></div></div></article>
+      </section>
+      <section class="business"><div><p class="eyebrow">A product hypothesis, not a sales claim</p><h2>Plan capacity.<br />Inspect the failure mode.</h2></div><p><strong>First user to interview:</strong> an emergency-response operations planner. <strong>Smallest credible pilot:</strong> one historical call archive, approved candidate lots, actual road travel times, two operating shifts, a held-out validation period. We would compare missed-demand weight and worst-neighborhood travel time against current positioning and integer optimization. Nothing in this demo has been validated with SAME, a municipality, or patients.</p></section>
+      <footer><span>GUARDIA GRID <i>×</i> QOLLAB & IONQ</span><span>This effort is supported by Qollab & IonQ.</span><span>Built with Qiskit · MIT code · Data licenses credited separately</span></footer>
+    </main>
+  </body>
+</html>

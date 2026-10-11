@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Three quantum experiments | Qollab × IonQ</title>
+    <title>Five quantum projects | Qollab × IonQ</title>
     <meta
       name="description"
-      content="Cut the GPS signal, inspect a quantum factoring demo, or swap the order of two questions. Three interactive experiments with inspectable evidence."
+      content="Explore Guardia Grid, a Qiskit QAOA experiment for robust emergency-capacity planning in Buenos Aires, plus four independent quantum projects."
     />
     <style>
       * {
@@ -54,6 +54,21 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
       }
+      .featured {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 20px;
+        align-items: end;
+        background: #132823;
+        color: #f5f4ef;
+        padding: 28px 32px;
+        margin: 0 0 30px;
+        text-decoration: none;
+      }
+      .featured h2 { margin: 7px 0; font-size: 26px; }
+      .featured p { max-width: 75ch; margin: 0; color: #d1d8ca; }
+      .featured strong { color: #b7e62d; font: 12px Consolas, monospace; }
+      .featured:hover strong { text-decoration: underline; }
       .project {
         display: flex;
         flex-direction: column;
@@ -150,6 +165,7 @@
         outline-offset: 6px;
       }
       @media (max-width: 900px) {
+        .featured { grid-template-columns: 1fr; }
         .projects {
           grid-template-columns: 1fr;
         }
@@ -194,6 +210,10 @@
         you a control that can change the conclusion. Open one and see what
         happens.
       </p>
+      <a class="featured" href="https://github.com/JustUrIs/quantum-hackathon-research/blob/main/ambulancias-qollab/README.md">
+        <span><strong>LEAD PROJECT / QISKIT + QAOA</strong><h2>GUARDIA GRID · CABA</h2><p>Explore a historical injury-crash signal, compare robust capacity plans against exact classical search, and inspect a measured 8-qubit QAOA circuit. Scenario planning only: no dispatch claim or quantum speedup.</p></span>
+        <strong>READ THE PROJECT →</strong>
+      </a>
       <div class="projects">
         <a class="project lost" href="./lost-signal/"
           ><h2>LOST SIGNAL</h2>
@@ -238,7 +258,7 @@
           </p>
           <a
             href="https://github.com/JustUrIs/quantum-hackathon-research/tree/main/releases"
-            >Download the three Qollab packages</a
+            >Download the five Qollab packages</a
           >
         </div>
         <div>

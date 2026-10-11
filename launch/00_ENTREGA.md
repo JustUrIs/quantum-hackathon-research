@@ -1,11 +1,13 @@
-# Tres proyectos: de demo local a entrega
+# Cinco proyectos: de demo local a entrega
 
-Los tres viven en el mismo repositorio que IMPOSTOR y se suben a Qollab como proyectos independientes. No necesitan servicios pagos ni claves. Cada carpeta contiene código, licencia MIT, datos y un README que sirve como ficha.
+Los cinco viven en el mismo repositorio, con Guardia Grid (ambulancias cuánticas) como entrega principal y cuatro proyectos independientes. Se suben a Qollab como proyectos independientes. No necesitan servicios pagos ni claves. Cada carpeta contiene código, licencia MIT, datos y un README que sirve como ficha.
 
 **Ya podés compartir las [tres demos públicas](https://justuris.github.io/quantum-hackathon-research/).** Son vistas previas de referencia sin backend remoto. [Enlaces, ganchos y recorridos breves](05_DEMOS_PUBLICAS.md).
 
 | Proyecto | Carpeta | Momento de la demo | Tema recomendado |
 |---|---|---|---|
+| **GUARDIA GRID · CABA** | `ambulancias-qollab/` | mover el límite de unidades y observar cobertura robusta y sitios fuera de servicio | Unlocked; impacto operativo solo con datos de SAME y validación |
+| IMPOSTOR | `impostor-qollab/` | desafiar al impostor clásico con correlaciones y memoria cuántica verificables | Unlocked |
 | LOST SIGNAL | `lost-signal-qollab/` | apagar GPS, subir ruido, perder la mejora GHZ | Unlocked; Impact solo con validación adicional |
 | Q-DAY CLOCK: the evidence room | `qday-clock-qollab/` | dos histogramas iguales, uno con la respuesta filtrada | Unlocked |
 | ORDER | `order-qollab/` | intercambiar preguntas, romper QQ, dejar ganar al clásico | Playground / Unlocked |
@@ -21,7 +23,7 @@ No abrir `index.html` con doble clic: los imports Python necesitan el runtime Qo
 1. Elegir una carpeta de proyecto, o extraer el ZIP correspondiente en `releases/`. Subir su contenido conservando las carpetas Python y `data/`. `index.html` y `main.js` deben quedar en la raíz.
 2. Abrirlo con el simulador gratuito integrado. Esperar el estado «Local model ready». Ejecutar el recorrido de un minuto del README. Verificar que cambien gráficos y números.
 3. Presionar el botón de backend una sola vez. Debe terminar con counts, nombre del backend y parámetros. Exportar el JSON. Mover controles después no debe modificar la evidencia capturada.
-4. Detener y reiniciar el proyecto, eligiendo un simulador gratuito IonQ. Probar el backend una vez más. Q-DAY debe empezar con N=15 y a=2. El envío usa 100 shots y puede tardar varios minutos. No seleccionar hardware pago por error.
+4. Detener y reiniciar el proyecto, eligiendo un simulador gratuito IonQ. Probar el backend una vez más. GUARDIA GRID debe mostrar el fixture CABA, comparar QAOA con tres baselines y permitir una medición del circuito. Q-DAY debe empezar con N=15 y a=2. El envío usa 100 shots y puede tardar varios minutos. No seleccionar hardware pago por error.
 5. Guardar el resultado identificado como IonQ solamente si la corrida real terminó. Si falla, guardar el error exacto; nunca reemplazarlo por un resultado ideal con la etiqueta remota.
 6. Grabar el recorrido de 2:30 con los guiones de este directorio. Subir el video a un enlace público sin login, incorporar ese enlace a la ficha y comprobar que se reproduce.
 7. Publicar cada proyecto en Qollab y entregar desde la cuenta del capitán. Revisar titular, tema, licencia, atribución y divulgación de trabajo previo.
@@ -42,4 +44,4 @@ La sesión de construcción no dispone de un navegador conectado a Qollab. Es un
 
 Si quedan 60 minutos, invertirlos en una corrida de Qollab, una objeción física y un video comprensible. Una animación adicional tiene menor ROI. Si falta la prueba de Impact para LOST SIGNAL, presentarlo en Unlocked con precisión científica, sin convertir el corredor ilustrativo en una afirmación de navegación.
 
-El informe `research/06_BUILD_DECISIONS.md` reemplaza las promesas excesivas del brief inicial. La propuesta original se conserva como antecedente, no como especificación de resultados logrados.
+La prioridad principal es Guardia Grid; los otros cuatro son propuestas independientes. El informe `research/06_BUILD_DECISIONS.md` reemplaza las promesas excesivas del brief inicial. La propuesta original se conserva como antecedente, no como especificación de resultados logrados.

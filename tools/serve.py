@@ -1,4 +1,4 @@
-"""Local harness for all three standalone Qollab projects.
+"""Local harness for the standalone Qollab projects.
 
 python tools/serve.py --port 8766
 HTTP RPC is development-only. Qollab uses its Python bridge, not this server.
@@ -17,6 +17,7 @@ from urllib.parse import urlparse, unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS = {
+    "ambulancias": ("ambulancias-qollab", "ambulancia.engine"),
     "lost-signal": ("lost-signal-qollab", "lostsignal.service"),
     "qday-clock": ("qday-clock-qollab", "qday.service"),
     "order": ("order-qollab", "orderlab.service"),

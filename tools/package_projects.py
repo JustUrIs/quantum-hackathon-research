@@ -9,6 +9,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "releases"
 OUT.mkdir(exist_ok=True)
 PROJECTS = {
+    "ambulancias-qollab": "ambulancia",
+    "impostor-qollab": "impostor",
     "lost-signal-qollab": "lostsignal",
     "qday-clock-qollab": "qday",
     "order-qollab": "orderlab",
@@ -27,9 +29,11 @@ for folder, module in PROJECTS.items():
             "runtime.js",
             "requirements.txt",
         )
+        if (root / p).is_file()
     ]
     paths += sorted((root / module).glob("*.py"))
     paths += sorted((root / "data").glob("*.json"))
+    paths += sorted((root / "data").glob("*.md"))
     assert len(paths) <= 100
     for p in paths:
         assert p.is_file(), p
