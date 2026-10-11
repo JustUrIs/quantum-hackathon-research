@@ -18,17 +18,19 @@
   },
   "darkroom-qollab": {
     "archive": "darkroom-qollab.zip",
-    "bytes": 15663,
-    "sha256": "2fcff130b36cc53c3787fc581ca6a3315869060664140500a7835712260a1659",
+    "bytes": 25708,
+    "sha256": "861abf65c627fe0a13b8af865761ee79e4e37effc9d2d41319794f1c0259838c",
     "files": {
-      "README.md": "ec8fc421d33569e912b5ccb44722d0eddfc4ab9212c4682343e23952b4ea2d35",
-      "LICENSE": "177588a97835b39e3109a4ddb9530b6b6ec56964bd14b1cd144bfb5de74dab96",
-      "index.html": "ee609b31cec6f6362f82fcbfae53f5cd74798a4b05357da14e2a43e646993ddf",
-      "main.js": "2283e13e5236734830aa08525a0c6de91b33a5fc5f7f18508e91a7070a5bf2e4",
+      "README.md": "6c241c0b419956131ff79b40347dc22896e1bc6b189818719c7ce1f2e92fa812",
+      "LICENSE": "072c44e2643496c58854698fb93ed56d6df6c5cf1ffbff94160ab68d6506cb38",
+      "index.html": "7873071c1d8c3290c489e88b36f188981096c7550ecceb2fdfab6f0804daa92a",
+      "main.js": "b28faea3d525d9fd67e24fde0fa6aa8e19e1d273fca3b3e0fef2278fdebf6165",
       "main.css": "33e5533cc66e1691e17d36eafcc798ccfae8820976edd25b0a8a721017aa0925",
+      "lesson.js": "cd5d6af0d2d13d0d18fea1ef24d22769ca765c6ff1a16bd3b5f17eabf19139c6",
+      "lesson.css": "545a97a3aa08469730510b7d1613ada37bea94dac024548001bd899297c798f6",
       "requirements.txt": "418c24e63c42a5b58c70525345da42678896038932de5a92a729817367996d6d",
       "darkroom/__init__.py": "57bbefbe1f9021421b345659f198d95bf0a5180c63801aa717e2ca6f6b099a96",
-      "darkroom/engine.py": "27bca2a327dcb0d6fcec1c671f58316cf114efdfcdebab15816c55ff1f1821ec"
+      "darkroom/engine.py": "745d3d6daddd6caf26339d106a3f34404f35d89a520c773d675ba2e7c8723329"
     }
   },
   "impostor-qollab": {

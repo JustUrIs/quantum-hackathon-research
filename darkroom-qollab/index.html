@@ -7,6 +7,7 @@
   <meta name="description" content="Explore interaction-free measurement with an auditable Qiskit interferometer model." />
   <title>DARKROOM — Quantum Interrogation Lab</title>
   <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet" href="./lesson.css" />
   <script type="module" src="./main.js"></script>
 </head>
 <body>
@@ -22,22 +23,25 @@
         <h1>Can light<br />find it<br /><em>and survive?</em></h1>
         <p class="lede">A photon is a tiny packet of light. An object blocking one of its possible paths changes which detector can click. Some photons reveal the object and survive; other attempts are absorbed or lost.</p>
         <p class="scope-note"><strong>A virtual optics lab:</strong> change the number of cycles, count the photons that survive, and see how ordinary light loss changes the result.</p>
+        <a class="learn-link" href="#lesson">Learn step by step / Aprendelo paso a paso</a>
       </div>
       <figure class="optics-card" aria-labelledby="opticCaption">
-        <div class="figure-head"><span>PATH INTERFEROMETER</span><span id="cycleStamp">04 PASSES</span></div>
+        <div class="figure-head"><span>LOGICAL CYCLES / TWO PATHS</span><span id="cycleStamp">02 CYCLES</span></div>
         <svg id="interferometer" viewBox="0 0 760 390" role="img" aria-labelledby="opticTitle opticDesc">
           <title id="opticTitle">Quantum interrogation path interferometer</title>
           <desc id="opticDesc">A probe follows two paths. An object blocks one arm. Detectors distinguish an absent object from a present object when the surviving probe exits without absorption.</desc>
         </svg>
-        <figcaption id="opticCaption">With no object, the ideal setup sends light to ABSENT. An object in the upper path allows PRESENT to click. A photon reaching that detector survived the test. This is a simplified path diagram.</figcaption>
+        <figcaption id="opticCaption">Each box repeats a gentle path mixing. Red marks mean the same object can absorb path 1 after each cycle. D0 and D1 are the final detectors; we do not measure between cycles. This is a logical diagram, not an optical blueprint.</figcaption>
       </figure>
     </section>
+
+    <section id="lesson" class="lesson" aria-label="Guided lesson / Lección guiada"></section>
 
     <section class="bench" aria-labelledby="benchTitle">
       <div class="section-title"><div><p class="eyebrow">Experiment controls</p><h2 id="benchTitle">Spend fewer probes on the sample.</h2></div><p>Choose how gently to rotate the probe each pass. Then add ordinary optical loss and watch which conclusions remain possible.</p></div>
       <div class="bench-grid">
         <aside class="controls">
-          <div class="control-row"><div class="label-line"><label for="cycles">Interrogation cycles</label><output id="cyclesValue" for="cycles">4</output></div><input id="cycles" type="range" min="2" max="6" step="1" value="4"/><div class="range-hints"><span>2 broad turns</span><span>6 gentle turns</span></div></div>
+          <div class="control-row"><div class="label-line"><label for="cycles">Interrogation cycles</label><output id="cyclesValue" for="cycles">2</output></div><input id="cycles" type="range" min="2" max="6" step="1" value="2"/><div class="range-hints"><span>2 broad turns</span><span>6 gentle turns</span></div></div>
           <div class="control-row"><div class="label-line"><label for="loss">Probe lost per pass</label><output id="lossValue" for="loss">0.0%</output></div><input id="loss" type="range" min="0" max="10" step="0.5" value="0"/><div class="range-hints"><span>0% ideal path</span><span>10% each pass</span></div></div>
           <div class="model-note"><span class="note-glyph">i</span><p>The loss slider is an <strong>analytic channel model</strong>, separate from the ideal Qiskit circuit. Lost probes are inconclusive, never quietly counted as a detection.</p></div>
         </aside>
@@ -55,8 +59,15 @@
     </section>
 
     <section class="circuit-section" aria-labelledby="circuitTitle">
-      <div class="circuit-copy"><p class="eyebrow">The part that runs on Qollab</p><h2 id="circuitTitle">An absorber, encoded as a quantum circuit.</h2><p>One measured circuit starts both object hypotheses in an equal label superposition. The path qubit takes small rotations; a fresh environment qubit records each possible absorption. Once a branch is absorbed, controls prevent it from evolving again.</p><p>The ideal statevector is checked against an independent probability formula. The loss slider is deliberately excluded from the circuit and labeled as analytic.</p></div>
-      <div class="run-card"><div class="run-meta"><span id="qubitCount">6 QUBITS</span><span>ONE JOB / CURRENT SETTINGS</span></div><button id="runBackend" type="button">Run the measured circuit <span>↗</span></button><p id="auditStatus" role="status" aria-live="polite">Select Run in Qollab, then submit one backend job here.</p><details id="auditDetails"><summary>Show every backend count</summary><pre id="auditOutput"></pre></details></div>
+      <div class="circuit-copy"><p class="eyebrow">The part that runs on Qollab</p><h2 id="circuitTitle">An absorber, encoded as a quantum circuit.</h2><p>One path qubit represents the two possible paths of one photon. Extra qubits label the known object-present and object-absent test conditions and record absorption branches; they do not represent extra photons. Each cycle mixes the path amplitudes. Absorbed branches stop evolving, and the final measurement classifies every outcome.</p><p>The ideal statevector is checked against an independent probability formula. The loss slider is deliberately excluded from the circuit and labeled as analytic.</p></div>
+      <div class="run-card"><div class="run-meta"><span id="qubitCount">4 QUBITS</span><span>LOCAL FIRST / OPTIONAL SELECTED BACKEND</span></div>
+        <button id="runLocal" type="button">Measure locally with Qiskit</button>
+        <button id="runBackend" class="secondary-run" type="button">Try the selected Qollab backend</button>
+        <p id="auditStatus" role="status" aria-live="polite">Local measurement uses Qiskit in this runtime without an IonQ request.</p>
+        <p id="measuredSummary"></p>
+        <details id="auditDetails"><summary>Show every backend count</summary><pre id="auditOutput"></pre></details>
+        <details id="errorDetails" hidden><summary>Technical connection / execution error</summary><pre id="backendError"></pre></details>
+      </div>
     </section>
 
     <section class="truth-row"><div><p class="eyebrow">Known physics · careful product claim</p><h2>Old physics. A better learning instrument.</h2></div><div><p>Interaction-free measurement and high-efficiency quantum interrogation were experimentally demonstrated decades ago. DARKROOM does not claim to invent them. Its contribution is a compact teaching lab that puts coherent interference, sample damage, ordinary loss, and every failed outcome on the same screen.</p><p>That makes it useful for teaching quantum measurement and for discussing low-dose sensing. It does <strong>not</strong> establish a practical imaging or medical device.</p><p class="sources">Primary references: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.74.4763">Kwiat et al., PRL (1995)</a> · <a href="https://doi.org/10.1103/PhysRevLett.83.4725">Kwiat et al., PRL (1999)</a></p></div></section>

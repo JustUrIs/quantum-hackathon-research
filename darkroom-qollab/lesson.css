@@ -1,0 +1,55 @@
+.lesson {padding:52px 0;border-top:1px solid #ffffff1b;scroll-margin-top:20px}
+.lesson-heading {display:flex;justify-content:space-between;align-items:start;gap:24px}
+.lesson h2 {font:500 clamp(30px,3.3vw,46px)/1.1 Georgia,serif;margin:0;letter-spacing:-.03em}
+.lesson-intro {max-width:850px;color:#ccd5d8;font-size:16px;line-height:1.7}
+.lesson-languages {display:flex;gap:7px;flex-shrink:0}
+.lesson button {width:auto;margin:0;font-size:13px;padding:12px 16px}
+.lesson-languages button {padding:8px 12px;font-size:11px;background:transparent;color:var(--muted);border:1px solid var(--line)}
+.lesson-languages button[aria-pressed=true] {border-color:var(--cyan);color:var(--cyan)}
+.lesson-progress {display:flex;gap:6px;margin:26px 0 28px}
+.lesson-progress span {height:3px;flex:1;background:var(--line)}
+.lesson-progress .reached {background:var(--cyan)}
+.lesson-layout {display:grid;grid-template-columns:1fr 1.05fr;gap:36px;align-items:start}
+.lesson-step {font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--coral);margin-top:0}
+.lesson-copy h3 {font:500 30px/1.17 Georgia,serif;margin:12px 0 22px}
+.lesson-copy>p:not(.lesson-step) {font-size:15px;line-height:1.8;color:#d0d9da}
+.lesson-nav,.lesson-trace-controls {display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+.lesson .lesson-secondary {background:transparent;border:1px solid var(--line);color:var(--paper)}
+.lesson button:disabled {cursor:default;opacity:.35}
+.lesson-visual {border:1px solid var(--line);background:var(--panel);padding:22px;min-width:0}
+.lesson-visual-title {font-size:12px;color:var(--cyan);font-weight:700;margin:0 0 10px}
+.lesson-svg {width:100%;display:block}
+.lesson-svg text {fill:var(--paper);font:12px system-ui}
+.lesson-single-photon {font-size:19px;color:var(--cyan);text-align:center;margin-bottom:0}
+.lesson-single-photon span {display:block;font-size:12px;color:var(--muted)}
+.lesson-visual>p:not(.lesson-visual-title):not(.lesson-single-photon) {font-size:12px;color:var(--muted)}
+.lesson-prob {display:grid;grid-template-columns:1fr auto;gap:8px;margin:16px 0;font-size:12px}
+.lesson-prob>div {grid-column:1/-1;background:#ffffff12;height:7px}
+.lesson-prob i {height:100%;display:block;background:var(--cyan)}
+.lesson-prob.absorbed i {background:var(--coral)}
+.lesson-prob.other i {background:var(--gold)}
+.lesson-visual small {display:block;margin-top:22px;color:var(--muted);font-size:11px;line-height:1.7}
+.lesson-trace-result {min-height:22px}
+.lesson-interference {background:#101820;padding:14px;border:1px solid var(--line);margin:18px 0}
+.lesson-interference>p {font-size:11px;color:var(--muted);margin:0 0 10px;line-height:1.7}
+.lesson-interference>div {display:flex;justify-content:space-between;align-items:center;gap:12px;margin:12px 0;font-size:13px}
+.lesson-interference strong {font:21px Georgia;color:var(--cyan)}
+.lesson-interference small {margin:0;color:var(--paper);font-size:13px}
+.lesson-tree>div {font-size:16px;text-align:center;padding:14px 10px}
+.lesson-proof {border-top:1px solid var(--line);padding-top:18px;line-height:2}
+.lesson-proof strong {color:var(--cyan)}
+.lesson-quiz fieldset {border:1px solid var(--line);margin:0 0 16px;padding:15px}
+.lesson-quiz legend {padding:0 6px;font-size:14px;font-weight:700}
+.lesson-quiz label {display:flex;gap:10px;font-size:13px;align-items:start;cursor:pointer;margin:13px 0;color:#d0d9da}
+.lesson-quiz input {flex-shrink:0;margin-top:4px;accent-color:var(--cyan)}
+.lesson-feedback {font-size:12px;line-height:1.7;padding:12px;border-left:2px solid var(--coral)}
+.lesson-feedback.correct {border-color:var(--cyan)}
+#lessonScore {font-size:17px;color:var(--cyan)}
+.lesson-scope {font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:17px;margin-top:28px}
+.learn-link {display:inline-block;margin-top:12px;padding:12px 18px;background:var(--cyan);color:var(--ink);font-size:14px;font-weight:700;text-decoration:none}
+.run-card .secondary-run {background:transparent;border:1px solid var(--line);color:var(--paper);font-size:11px}
+#measuredSummary {font-size:12px;line-height:1.8;color:#d0d9da;margin:18px 0}
+@media(max-width:800px) {.lesson-layout{grid-template-columns:1fr;gap:25px}.lesson-heading{flex-direction:column;gap:15px}.lesson-visual{padding:16px}}
+
+.lesson-detector-key {display:flex;gap:15px;flex-wrap:wrap;font-size:12px;margin:10px 0 22px;color:var(--cyan)}
+.lesson-detector-key span:last-child {color:var(--gold)}

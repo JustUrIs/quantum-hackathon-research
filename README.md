@@ -1,6 +1,6 @@
 # Quantum experiments you can question
 
-**Six independent Qollab project candidates, led by Guardia Grid.** Each makes a quantum idea tangible and exposes the assumptions behind its result. Teams can submit up to five; use the project pages to choose the strongest fit for each team.
+**Six independent Qollab project candidates, led by Guardia Grid.** The current plan prioritizes four submissions, including DARKROOM; the remaining candidates are reserves. Each makes a quantum idea tangible and exposes the assumptions behind its result.
 
 **This effort is supported by Qollab & IonQ.**
 
@@ -50,6 +50,7 @@ The repository's saved browser screenshots and local backend artifacts are label
 
 - [Delivery checklist](launch/00_ENTREGA.md)
 - [Guardia Grid judge demo script](launch/06_GUARDIA_GRID_PITCH.md)
+- [DARKROOM guided lesson and local measurement steps](launch/08_DARKROOM_PRUEBA_GUIADA.md)
 - [Project pitches and demos](launch/)
 - [Validation report](research/07_VALIDATION.md)
 

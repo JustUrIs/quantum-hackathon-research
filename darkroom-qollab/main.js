@@ -1,4 +1,5 @@
 import * as svc from "darkroom.engine";
+import "./lesson.js";
 
 const $ = (id) => document.getElementById(id);
 const SVG = "http://www.w3.org/2000/svg";
@@ -6,6 +7,8 @@ let result = null;
 let pending = null;
 let busy = false;
 let spent = false;
+let auditBusy = false;
+let lastReport = null;
 const hasBackend = () => { try { return typeof backend !== "undefined" && backend !== null; } catch { return false; } };
 const py = async (name, ...args) => await svc[name].callPromising(...args);
 const p = (v) => `${(100 * v).toFixed(1)}%`;
@@ -23,37 +26,28 @@ function text(x, y, label, klass, parent) {
 
 function drawInterferometer(n) {
   const svg = $("interferometer"); svg.replaceChildren();
-  node("title", { id: "opticTitle" }).textContent = "Two photon paths and two possible detector outputs";
-  node("desc", { id: "opticDesc" }).textContent = "An absorbing object can block the upper arm. A surviving photon at the present detector reveals the object without absorption.";
-  const defs = node("defs");
-  const pattern = node("pattern", { id: "blockedHatch", width: 9, height: 9, patternTransform: "rotate(45)", patternUnits: "userSpaceOnUse" }, defs);
-  node("rect", { width: 9, height: 9, fill: "#f0755b" }, pattern);
-  node("line", { x1: 0, y1: 0, x2: 0, y2: 9, stroke: "#101820", "stroke-width": 3 }, pattern);
-  // The split arms and recombination are the main visual explanation.
-  node("path", { d: "M56 194H164L204 92H480L528 194M164 194L204 296H480L528 194M528 194L676 118M528 194L676 270", class: "light-path" });
-  node("path", { d: "M204 92H480", class: "object-path" });
-  node("circle", { cx: 56, cy: 194, r: 12, class: "source" });
-  text(56, 230, "PHOTON", "diagram-label");
-  node("rect", { x: 151, y: 181, width: 26, height: 26, transform: "rotate(45 164 194)", class: "splitter" });
-  text(164, 239, "SPLIT", "diagram-label");
-  node("rect", { x: 515, y: 181, width: 26, height: 26, transform: "rotate(45 528 194)", class: "splitter" });
-  text(528, 239, "RECOMBINE", "diagram-label");
-  node("rect", { x: 326, y: 67, width: 72, height: 50, rx: 3, class: "object" });
-  node("rect", { x: 333, y: 75, width: 58, height: 34, rx: 2, fill: "url(#blockedHatch)", class: "absorber" });
-  text(362, 89, "OBJECT", "object-word"); text(362, 105, "PRESENT?", "object-word small");
-  const passXs = Array.from({ length: n }, (_, i) => 218 + (i * 244) / Math.max(1, n - 1));
-  passXs.forEach((x, i) => {
-    node("circle", { cx: x, cy: 92, r: 5, class: "pass-dot" });
-    text(x, 69, String(i + 1).padStart(2, "0"), "pass-number");
-  });
-  node("circle", { cx: 685, cy: 113, r: 18, class: "detector detector-present" });
-  node("circle", { cx: 685, cy: 275, r: 18, class: "detector detector-absent" });
-  text(685, 153, "PRESENT", "detector-label");
-  text(685, 315, "ABSENT", "detector-label");
-  node("circle", { cx: 204, cy: 296, r: 6, class: "mirror" });
-  node("circle", { cx: 480, cy: 296, r: 6, class: "mirror" });
-  text(380, 365, `${n} weak rotations · one coherent interferometer`, "diagram-caption");
-  $("cycleStamp").textContent = `${String(n).padStart(2, "0")} PASSES`;
+  node("title", { id: "opticTitle" }).textContent = "Repeated mixing of two photon paths and a final readout";
+  node("desc", { id: "opticDesc" }).textContent = "Start in clear path 0. Each cycle mixes path amplitudes. A present object can absorb path 1 after each cycle. Only the final detectors are measured.";
+  node("path", { d: "M100 120H680M56 270H680", class: "light-path" });
+  node("path", { d: "M120 120H610", class: "object-path" });
+  node("circle", { cx: 56, cy: 270, r: 11, class: "source" });
+  text(56, 308, "1 PHOTON", "diagram-label");
+  text(358, 60, "PATH 1 / THE OBJECT CAN ABSORB HERE", "diagram-label");
+  text(356, 315, "PATH 0 / CLEAR", "diagram-label");
+  for (let i = 0; i < n; i++) {
+    const x = 150 + (i * 410) / Math.max(1, n - 1);
+    node("rect", { x: x - 10, y: 104, width: 20, height: 182, rx: 4, class: "splitter" });
+    node("path", { d: `M${x-6} 254L${x+6} 134M${x-6} 134L${x+6} 254`, fill: "none", stroke: "#63d6c5", "stroke-width": 1.4 });
+    node("circle", { cx: x, cy: 90, r: 4, class: "pass-dot" });
+    text(x, 76, String(i + 1).padStart(2, "0"), "pass-number");
+    node("rect", { x: x + 15, y: 112, width: 16, height: 16, rx: 2, class: "object" });
+  }
+  node("circle", { cx: 687, cy: 120, r: 17, class: "detector detector-absent" });
+  node("circle", { cx: 687, cy: 270, r: 17, class: "detector detector-present" });
+  text(687, 163, "D1: ABSENT", "detector-label");
+  text(687, 313, "D0: PRESENT", "detector-label");
+  text(380, 365, `${n} mixing cycles, then one final detector measurement`, "diagram-caption");
+  $("cycleStamp").textContent = `${String(n).padStart(2, "0")} CYCLES`;
 }
 
 function outcomeRows(target, data, labels) {
@@ -100,8 +94,31 @@ function render(d) {
   $("liveDot").dataset.error = mismatch >= 1e-9 ? "true" : "false";
   // The circuit probability is a no-loss reference; keep it explicitly separate.
   const idealSafe = d.circuit.ideal_statevector_outcomes.present.identified_without_absorption;
-  $("auditStatus").textContent = `No-loss Qiskit reference: ${p(idealSafe)} present detections without absorption. Analytic loss model is separate.`;
+  if (!lastReport && !auditBusy && !spent) $("auditStatus").textContent = `Start with local Qiskit measurement. Ideal prediction: ${p(idealSafe)} safe detections for a present object. The loss slider is excluded from both circuit runs.`;
 }
+
+function showReport(report) {
+  lastReport = report;
+  $("auditOutput").textContent = JSON.stringify(report, null, 2);
+  const present = report.by_object_hypothesis.present;
+  const absent = report.by_object_hypothesis.absent;
+  $("measuredSummary").textContent = `${report.backend} · ${report.config.cycles} cycles · ${report.shots} simulated/recorded shots. Of ${present.shots} present-object trials: ${present.outcomes.identified_without_absorption} detected without absorption, ${present.outcomes.absorbed} absorbed, ${present.outcomes.unexpected_or_noise} unexpected. Of ${absent.shots} absent-object trials: ${absent.outcomes.identified_absent} correctly reached ABSENT. Ordinary optical loss is excluded.`;
+  $("auditStatus").textContent = `Result received: ${p(present.rates.identified_without_absorption)} safe detections among present-object trials. Source: ${report.backend}. These counts belong to ${report.config.cycles} cycles, independently of later slider changes.`;
+}
+
+$("runLocal").addEventListener("click", async () => {
+  if (busy || auditBusy || !result) return;
+  const snapshot = { ...result.config };
+  const button = $("runLocal"); button.disabled = true; auditBusy = true;
+  $("auditStatus").textContent = "Measuring the Qiskit circuit locally: 1,024 simulated trials, no remote provider request…";
+  try {
+    showReport(JSON.parse(String(await py("local_audit", JSON.stringify(snapshot)))));
+  } catch (error) {
+    $("auditStatus").textContent = "Local Qiskit measurement failed. Open the technical error details below.";
+    $("backendError").textContent = String(error.message || error);
+    $("errorDetails").hidden = false;
+  } finally { button.disabled = false; auditBusy = false; }
+});
 
 async function refresh() {
   pending = activeConfig(); if (busy) return; busy = true;
@@ -120,9 +137,9 @@ for (const id of ["cycles", "loss"]) $(id).addEventListener("input", refresh);
 $("runBackend").addEventListener("click", async () => {
   const button = $("runBackend"), status = $("auditStatus");
   if (spent) { status.textContent = "This project run already used its one backend job. Restart it in Qollab to capture a new measurement."; return; }
-  if (busy || !result) { status.textContent = "Wait for the probability model to finish."; return; }
+  if (busy || auditBusy || !result) { status.textContent = "Wait for the current calculation to finish."; return; }
   if (!hasBackend()) { status.textContent = "No Qollab backend is connected. The ideal Qiskit reference is still available."; return; }
-  const snapshot = { ...result.config }; button.disabled = true; status.textContent = "Building the measured path-and-absorber circuit…";
+  const snapshot = { ...result.config }; button.disabled = true; auditBusy = true; status.textContent = "Building the measured path-and-absorber circuit…";
   try {
     const circuit = await svc.audit_circuit.callPromising(JSON.stringify(snapshot));
     const name = String(backend.name || backend.backend_name || "selected backend");
@@ -134,12 +151,17 @@ $("runBackend").addEventListener("click", async () => {
     const raw = response.get_counts(); const v = raw && raw.toJs ? raw.toJs() : raw;
     const counts = v instanceof Map ? Object.fromEntries(v) : v;
     const report = JSON.parse(String(await svc.ingest_audit.callPromising(JSON.stringify(counts), JSON.stringify(snapshot), name)));
-    $("auditOutput").textContent = JSON.stringify(report, null, 2); $("auditDetails").open = true;
-    const a = report.by_object_hypothesis.absent.rates.identified_absent;
-    const s = report.by_object_hypothesis.present.rates.identified_without_absorption;
-    status.textContent = `${report.shots} measured shots on ${report.backend}. Correct absent-port rate: ${p(a)}; present detections without absorption: ${p(s)}. Inspect every count below.`;
+    showReport(report);
     button.textContent = "Job used · restart Qollab to measure again";
-  } catch (error) { status.textContent = `Backend job failed: ${error.message || error}. The local formula remains separate.`; if (!spent) button.disabled = false; }
+  } catch (error) {
+    const message = String(error.message || error);
+    status.textContent = /failed to fetch|networkerror|connection aborted/i.test(message)
+      ? "The selected backend could not be reached from this browser. No result was received. Use Measure locally with Qiskit; it needs no provider connection."
+      : "The selected-backend attempt failed. Use the local Qiskit measurement or inspect the technical error below.";
+    $("backendError").textContent = message; $("errorDetails").hidden = false;
+    if (!spent) button.disabled = false;
+    else button.textContent = "Attempt used · restart Qollab to try again";
+  } finally { auditBusy = false; }
 });
 
 refresh();

@@ -15,39 +15,29 @@ function text(x, y, label, klass, parent) {
 
 function drawInterferometer(n) {
   const svg = $("interferometer"); svg.replaceChildren();
-  node("title", { id: "opticTitle" }).textContent = "Two photon paths and two possible detector outputs";
-  node("desc", { id: "opticDesc" }).textContent = "An absorbing object can block the upper arm. A surviving photon at the present detector reveals the object without absorption.";
-  const defs = node("defs");
-  const pattern = node("pattern", { id: "blockedHatch", width: 9, height: 9, patternTransform: "rotate(45)", patternUnits: "userSpaceOnUse" }, defs);
-  node("rect", { width: 9, height: 9, fill: "#f0755b" }, pattern);
-  node("line", { x1: 0, y1: 0, x2: 0, y2: 9, stroke: "#101820", "stroke-width": 3 }, pattern);
-  // The split arms and recombination are the main visual explanation.
-  node("path", { d: "M56 194H164L204 92H480L528 194M164 194L204 296H480L528 194M528 194L676 118M528 194L676 270", class: "light-path" });
-  node("path", { d: "M204 92H480", class: "object-path" });
-  node("circle", { cx: 56, cy: 194, r: 12, class: "source" });
-  text(56, 230, "PHOTON", "diagram-label");
-  node("rect", { x: 151, y: 181, width: 26, height: 26, transform: "rotate(45 164 194)", class: "splitter" });
-  text(164, 239, "SPLIT", "diagram-label");
-  node("rect", { x: 515, y: 181, width: 26, height: 26, transform: "rotate(45 528 194)", class: "splitter" });
-  text(528, 239, "RECOMBINE", "diagram-label");
-  node("rect", { x: 326, y: 67, width: 72, height: 50, rx: 3, class: "object" });
-  node("rect", { x: 333, y: 75, width: 58, height: 34, rx: 2, fill: "url(#blockedHatch)", class: "absorber" });
-  text(362, 89, "OBJECT", "object-word"); text(362, 105, "PRESENT?", "object-word small");
-  const passXs = Array.from({ length: n }, (_, i) => 218 + (i * 244) / Math.max(1, n - 1));
-  passXs.forEach((x, i) => {
-    node("circle", { cx: x, cy: 92, r: 5, class: "pass-dot" });
-    text(x, 69, String(i + 1).padStart(2, "0"), "pass-number");
-  });
-  node("circle", { cx: 685, cy: 113, r: 18, class: "detector detector-present" });
-  node("circle", { cx: 685, cy: 275, r: 18, class: "detector detector-absent" });
-  text(685, 153, "PRESENT", "detector-label");
-  text(685, 315, "ABSENT", "detector-label");
-  node("circle", { cx: 204, cy: 296, r: 6, class: "mirror" });
-  node("circle", { cx: 480, cy: 296, r: 6, class: "mirror" });
-  text(380, 365, `${n} weak rotations · one coherent interferometer`, "diagram-caption");
-  $("cycleStamp").textContent = `${String(n).padStart(2, "0")} PASSES`;
+  node("title", { id: "opticTitle" }).textContent = "Repeated mixing of two photon paths and a final readout";
+  node("desc", { id: "opticDesc" }).textContent = "Start in clear path 0. Each cycle mixes path amplitudes. A present object can absorb path 1 after each cycle. Only the final detectors are measured.";
+  node("path", { d: "M100 120H680M56 270H680", class: "light-path" });
+  node("path", { d: "M120 120H610", class: "object-path" });
+  node("circle", { cx: 56, cy: 270, r: 11, class: "source" });
+  text(56, 308, "1 PHOTON", "diagram-label");
+  text(358, 60, "PATH 1 / THE OBJECT CAN ABSORB HERE", "diagram-label");
+  text(356, 315, "PATH 0 / CLEAR", "diagram-label");
+  for (let i = 0; i < n; i++) {
+    const x = 150 + (i * 410) / Math.max(1, n - 1);
+    node("rect", { x: x - 10, y: 104, width: 20, height: 182, rx: 4, class: "splitter" });
+    node("path", { d: `M${x-6} 254L${x+6} 134M${x-6} 134L${x+6} 254`, fill: "none", stroke: "#63d6c5", "stroke-width": 1.4 });
+    node("circle", { cx: x, cy: 90, r: 4, class: "pass-dot" });
+    text(x, 76, String(i + 1).padStart(2, "0"), "pass-number");
+    node("rect", { x: x + 15, y: 112, width: 16, height: 16, rx: 2, class: "object" });
+  }
+  node("circle", { cx: 687, cy: 120, r: 17, class: "detector detector-absent" });
+  node("circle", { cx: 687, cy: 270, r: 17, class: "detector detector-present" });
+  text(687, 163, "D1: ABSENT", "detector-label");
+  text(687, 313, "D0: PRESENT", "detector-label");
+  text(380, 365, `${n} mixing cycles, then one final detector measurement`, "diagram-caption");
+  $("cycleStamp").textContent = `${String(n).padStart(2, "0")} CYCLES`;
 }
-
 
 function model(n, loss) {
   const theta = Math.PI / (2 * n), c2 = Math.cos(theta) ** 2, s2 = Math.sin(theta) ** 2;

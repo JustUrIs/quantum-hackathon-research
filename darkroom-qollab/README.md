@@ -4,6 +4,8 @@
 
 ## What it does
 
+Start with **Learn step by step**. The six-step English/Spanish lesson distinguishes path amplitudes from split photon energy, explains mixers and final detectors, and walks through the empty and object-present two-cycle cases. A final four-question check covers whole-photon detection, the impossible empty-apparatus D0 outcome, the purpose of the measurement, and inconclusive optical loss. The guided lesson uses analytic probabilities at two cycles and zero ordinary loss; the independent experiment controls below can explore more cycles.
+
 A direct probe can reveal a perfectly absorbing object, but the probe is absorbed. In interaction-free measurement, a sequence of weak path rotations can sometimes reveal that the object is present because it changes the interference pattern, even though the successful probe did not enter the blocked arm. This is probabilistic. Increasing the number of ideal cycles reduces absorption, while real loss creates more opportunities for an inconclusive result.
 
 DARKROOM puts those tradeoffs side by side. It reports correct absent-port detections, safe present detections, absorbed probes, and lost/inconclusive probes separately. It never turns them into one success score.
@@ -14,7 +16,13 @@ This is an educational simulation of established physics. It is not a photon exp
 
 The Python module constructs and simulates a Qiskit circuit with 4–8 qubits. Qubit 0 labels the object hypothesis, qubit 1 is the probe path, and one fresh environment qubit per cycle records absorption. An absorbed branch is frozen so later rotations cannot change it. The ideal statevector outcome probabilities are compared against a separately written analytic formula.
 
-The loss slider is an independent analytic channel model. It is intentionally not represented as hardware noise or included in the Qiskit circuit. The **Run the measured circuit** button submits one measured Qiskit circuit on the selected Qollab backend, then reports the raw counts and all classified outcomes. Backend results model the ideal absorber; they do not include the slider's optical loss.
+The loss slider is an independent analytic channel model. It is intentionally not represented as hardware noise or included in the Qiskit circuit.
+
+**Measure locally with Qiskit** runs the measured circuit using Qiskit's Python `BasicSimulator` in the current runtime, without a remote provider request. It uses 1,024 shots and seed 91 for reproducibility. Reports identify the simulator, settings, seed, and simulation source. This is circuit simulation, not hardware evidence.
+
+**Try the selected Qollab backend** separately attempts one job on the backend selected in the portal. If its network connection fails, the app shows a concise explanation and preserves technical details. A failed attempt is never reported as an IonQ result; the local measurement remains available. The app does not retry a potentially submitted remote job automatically. Both circuit runs model the ideal absorber and exclude the slider's optical loss.
+
+The object-label qubit compares two known test conditions; the app does not infer a real object's presence from a sensor feed. One path qubit represents one photon's two path alternatives. The extra qubits record possible absorption branches. Six qubits therefore do not mean six photons.
 
 ## Run locally
 
@@ -23,7 +31,7 @@ python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
 ```
 
-Create a Qollab project from these files, select its supported simulator, and press **Run**. The project has no API keys, network dependencies, or external service requirement. Browser execution speed depends on the Qollab simulator.
+Create a Qollab project from these files, keeping `darkroom/`, `lesson.js`, and `lesson.css`. Press **Run**, use **Learn step by step**, and then press **Measure locally with Qiskit**. The default two-cycle setup matches the lesson. The local path needs no API keys or provider connection. Browser execution speed depends on the runtime.
 
 ## Model
 

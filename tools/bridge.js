@@ -13,6 +13,7 @@ export const evaluate = fn("evaluate");
 export const radical = fn("radical");
 export const audit_counts = fn("audit_counts");
 export const ingest_audit = fn("ingest_audit");
+export const local_audit = fn("local_audit");
 export const audit_circuit = {
   callPromising: async (...args) =>
     JSON.parse(await call("audit_circuit", args)),

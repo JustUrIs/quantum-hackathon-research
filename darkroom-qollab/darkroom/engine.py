@@ -11,11 +11,12 @@ from functools import lru_cache
 import numpy as np
 from qiskit import QuantumCircuit, transpile
 from qiskit.quantum_info import Statevector
+from qiskit.providers.basic_provider import BasicSimulator
 
 
 def _config(value):
     c = json.loads(value) if isinstance(value, str) else dict(value)
-    cycles = int(c.get("cycles", 4))
+    cycles = int(c.get("cycles", 2))
     loss = float(c.get("loss_per_pass", 0.0))
     if not 2 <= cycles <= 6:
         raise ValueError("Choose between 2 and 6 interrogation cycles.")
@@ -181,6 +182,22 @@ def audit_circuit(config_json):
     c = _config(config_json)
     circuit = _circuit(c["cycles"], measure=True)
     return transpile(circuit, basis_gates=["h", "x", "y", "z", "s", "sdg", "t", "tdg", "rx", "ry", "rz", "cx"], optimization_level=1)
+
+
+def local_audit(config_json):
+    """Measure the Qiskit circuit without calling a remote provider."""
+    circuit = audit_circuit(config_json)
+    counts = BasicSimulator().run(
+        circuit, shots=1024, seed_simulator=91
+    ).result().get_counts()
+    report = json.loads(ingest_audit(
+        json.dumps(counts), config_json, "Qiskit BasicSimulator / local Python runtime"
+    ))
+    report["source"] = {
+        "kind": "local_qiskit_simulation", "shots": 1024,
+        "seed": 91, "network_used": False, "quantum_hardware": False,
+    }
+    return json.dumps(report, allow_nan=False)
 
 
 def _classify(mask, cycles):

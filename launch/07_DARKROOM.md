@@ -24,8 +24,8 @@ Submit under **Quantum Unlocked**. The core result is an accessible, runnable ex
 
 ## Demo path
 
-1. Start at 4 cycles and zero loss. Point out the object-absent 100% output and the object-present safe/absorbed split.
+1. Open **Learn step by step** and demonstrate the empty versus object-present two-cycle traces. Point out the final D0 cancellation in the empty setup and the whole-photon outcomes.
 2. Move to 6 cycles: in the ideal model, safe detections rise and absorption falls.
 3. Set loss to 5% per pass: lost/inconclusive outcomes grow. Emphasize that this loss model is analytic and not in the circuit.
-4. Run the measured circuit once on Qollab. Show the raw counts and the formula/statevector agreement; distinguish finite-shot variation from exact probabilities.
+4. Use **Measure locally with Qiskit** on Qollab. Show its BasicSimulator source, counts and formula/statevector agreement; distinguish finite-shot variation from exact probabilities. A selected-provider run is optional and separately labeled.
 5. Close with the caveat: simulated absorber, established physics, no claim of practical imaging.

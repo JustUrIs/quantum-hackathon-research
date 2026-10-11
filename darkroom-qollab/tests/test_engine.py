@@ -2,10 +2,23 @@ import json
 import math
 import unittest
 
-from darkroom.engine import _analytic, _ideal_circuit_outcomes, evaluate, ingest_audit
+from darkroom.engine import _analytic, _ideal_circuit_outcomes, evaluate, ingest_audit, local_audit
 
 
 class QuantumInterrogationTests(unittest.TestCase):
+    def test_local_measured_simulator_matches_physics_and_keeps_source(self):
+        for cycles in (2, 6):
+            report = json.loads(local_audit(json.dumps({"cycles": cycles, "loss_per_pass": 0.1})))
+            self.assertEqual(report["shots"], 1024)
+            self.assertFalse(report["source"]["network_used"])
+            absent = report["by_object_hypothesis"]["absent"]["rates"]
+            present = report["by_object_hypothesis"]["present"]["rates"]
+            self.assertEqual(absent["identified_absent"], 1.0)
+            expected = math.cos(math.pi / (2 * cycles)) ** (2 * cycles)
+            self.assertAlmostEqual(present["identified_without_absorption"], expected, delta=0.08)
+            self.assertEqual(present["unexpected_or_noise"], 0)
+            self.assertEqual(present["lost_inconclusive"], 0)
+
     def test_ideal_circuit_matches_all_analytic_outcomes(self):
         for cycles in range(2, 7):
             with self.subTest(cycles=cycles):

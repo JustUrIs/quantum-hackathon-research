@@ -27,6 +27,8 @@ for folder, module in PROJECTS.items():
             "index.html",
             "main.js",
             "main.css",
+            "lesson.js",
+            "lesson.css",
             "runtime.js",
             "requirements.txt",
         )

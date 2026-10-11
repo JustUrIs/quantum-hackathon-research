@@ -49,7 +49,7 @@ def worker(conn, folder, module):
                     .result()
                     .get_counts()
                 )
-            elif name in ("evaluate", "radical", "ingest_audit", "audit_counts"):
+            elif name in ("evaluate", "radical", "ingest_audit", "audit_counts", "local_audit"):
                 out = getattr(service, name)(*args)
             else:
                 raise ValueError("Unknown method")
