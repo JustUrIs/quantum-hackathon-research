@@ -60,7 +60,7 @@ function renderAudit(rep) {
   $('auditStatus').textContent = `${rep.backend} measured ${rep.shots} shots of the packed circuit. Same circuits, real backend:`;
   const cells = [
     ['Telepathy (CHSH), all 4 settings', rep.chsh_total, state.ov.chsh.classical_max, '75% max for any faker'],
-    ['Magic square, 3 cells', rep.magic_total, state.ov.magic.classical_max, '88.9% max for any faker'],
+    ['Magic square, 3 cells (circuit check)', rep.magic_total, rep.magic_classical_max, '100% classical ceiling for these 3 cells; full-game 8/9 bound does not apply'],
   ];
   $('auditTable').innerHTML = cells.map(([name, v, cap, capTxt]) =>
     `<div class="audit-cell ${v > cap ? '' : 'fail'}"><span>${name}</span><b>${pct(v)}</b><span>${v > cap ? 'beats' : 'does not beat'} the classical ceiling · ${capTxt}</span></div>`).join('');
@@ -79,8 +79,9 @@ function setSource(src) {
   document.querySelectorAll('#source button').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.source === src)));
   const n = SOURCE_NOTES[src];
   $('sourceNote').textContent = typeof n === 'function' ? n() : n;
-  const label = src === 'urandom' ? '/dev/urandom' : src === 'audit' ? `Quantum pair (${backendName()})` : 'Quantum pair';
-  for (const id of ['chshQLabel', 'magicQLabel']) $(id).textContent = label;
+  const label = src === 'urandom' ? '/dev/urandom' : src === 'audit' ? `Quantum pair (${backendName()}; reused shots)` : 'Quantum pair';
+  $('chshQLabel').textContent = label;
+  $('magicQLabel').textContent = src === 'audit' ? 'Quantum pair (backend + exact simulation; reused shots)' : label;
   document.querySelectorAll('.meter.q').forEach((el) => el.classList.toggle('slop', src === 'urandom'));
   resetChsh(); resetMagic();
   if (state.zip.n) drawZip();

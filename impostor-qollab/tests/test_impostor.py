@@ -18,6 +18,8 @@ ov = json.loads(s.overview())
 check("chsh bruteforce = 0.75 over 16", ov["chsh"]["bruteforce"] == {"tried": 16, "best": 0.75, "at_best": 8})
 check("magic bruteforce = 8/9 over 4096", ov["magic"]["bruteforce"]["tried"] == 4096
       and abs(ov["magic"]["bruteforce"]["best"] - 8 / 9) < 1e-9)
+check("three audited cells admit a perfect classical strategy",
+      g.magic_bruteforce(s.AUDIT_MAGIC)["best"] == 1.0)
 
 # exact play
 res = json.loads(s.play_chsh(4000, json.dumps([0, 0, 0, 0]), "exact", 1))
@@ -46,6 +48,7 @@ counts = BasicSimulator().run(qc, shots=300).result().get_counts()
 rep = json.loads(s.ingest_audit(json.dumps(counts), "basic_simulator"))
 check("audit chsh ~0.85", abs(rep["chsh_total"] - 0.854) < 0.05, f"{rep['chsh_total']:.3f} in {time.time()-t:.1f}s")
 check("audit magic = 1", rep["magic_total"] == 1.0, json.dumps(rep["magic"]))
+check("audit uses the subset classical bound", rep["magic_classical_max"] == 1.0)
 a = json.loads(s.play_chsh(50, "[0,0,0,0]", "audit", 5))
 check("audit-sourced rounds use backend shots", all(r["src"] == "audit" for r in a["rounds"]))
 

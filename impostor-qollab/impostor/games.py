@@ -174,15 +174,18 @@ def magic_grid_value(grid: list[list[int]]) -> dict:
     return {"value": sum(wins) / 9, "cells": wins}
 
 
-def magic_bruteforce() -> dict:
+def magic_bruteforce(settings=None) -> dict:
     """All deterministic strategies: 4 legal row triples ^3 for Alice x 4 column triples ^3 for Bob."""
+    settings = list(itertools.product(range(3), repeat=2)) if settings is None else list(settings)
+    if not settings or any(r not in range(3) or c not in range(3) for r, c in settings):
+        raise ValueError("Expected nonempty magic-square settings in range(3).")
     plus = [t for t in itertools.product((1, -1), repeat=3) if math.prod(t) == 1]
     minus = [t for t in itertools.product((1, -1), repeat=3) if math.prod(t) == -1]
     best, at_best, tried = 0.0, 0, 0
     for A in itertools.product(plus, repeat=3):
         for B in itertools.product(minus, repeat=3):
             tried += 1
-            v = sum(A[r][c] == B[c][r] for r in range(3) for c in range(3)) / 9
+            v = sum(A[r][c] == B[c][r] for r, c in settings) / len(settings)
             if v > best + 1e-12:
                 best, at_best = v, 1
             elif abs(v - best) < 1e-12:

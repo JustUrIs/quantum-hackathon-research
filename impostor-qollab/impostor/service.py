@@ -77,6 +77,8 @@ def ingest_audit(counts_json, backend_name="selected backend"):
         report[kind][key] = sum(wins) / max(1, len(wins))
     report["chsh_total"] = sum(chsh_wins) / max(1, len(chsh_wins))
     report["magic_total"] = sum(magic_wins) / max(1, len(magic_wins))
+    report["magic_classical_max"] = g.magic_bruteforce(AUDIT_MAGIC)["best"]
+    report["magic_scope"] = "Three-cell circuit check; not a full magic-square game."
     _audit["backend"] = str(backend_name)
     _audit["cursor"] = {}
     return json.dumps(report)

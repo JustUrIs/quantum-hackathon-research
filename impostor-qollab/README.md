@@ -9,7 +9,7 @@
 
 ## Try it in 60 seconds (for judges)
 
-1. Press **Run** on any free simulator. The local one gives the full experience, and it also works on the IonQ simulators (one job per run). Use Chrome, Edge, Brave, Opera or Firefox 153+, not Safari.
+1. Upload the project and press **Run** on Qollab's free local simulator. The code targets the selected Qollab backend, including IonQ simulators, with one job per run. **Live Qollab/Pyodide and remote IonQ execution remain unverified as of October 11.** Local Python/browser checks are documented below.
 2. Open **02 Magic square**, press **Play 200 rounds**, then **Let the bot try all 4,096 plans**. One cell always clashes. The quantum pair wins every round.
 3. Switch **Who plays the quantum side?** to **/dev/urandom** and play again: the "quantum" record falls apart.
 4. Open **03 Zip**, choose **12 qubits** and drag the bits slider: thousands of bits still lose to 12 qubits.
@@ -36,9 +36,9 @@ IMPOSTOR turns those proofs into a game where **you are the forger**. The thesis
 | 03 Zip, n = 8 | XEB **1.03** | our impostor: 0.41 with 512 bits, 0.76 with 2,048 bits | ~0.00 | linear XEB, ideal ≈ 1 |
 | 03 Zip, n = 12 | XEB **0.99** | our impostor: 0.06 with 768 bits, **0.32 with 6,144 bits**; the paper proves ≥78 bits are needed for 0.427, and its best known protocol uses ~330 | ~0.00 | arXiv:2509.07255, Theorem 1 |
 
-**Does it survive noise?** We ran the 20-qubit audit circuit with depolarizing plus readout noise (Qiskit Aer, offline). At 0.5% two-qubit error CHSH scores 0.845 and the magic square 0.978. At 5% they score 0.825 and 0.916. Both stay above their classical ceilings (0.75 and 0.889).
+**Does it survive noise?** Historical offline results for the 20-qubit audit circuit with depolarizing plus readout noise (Qiskit Aer): at 0.5% two-qubit error CHSH scores 0.845 and the three-cell magic check 0.978; at 5% they score 0.825 and 0.916. CHSH remains above the full-game 0.75 ceiling in these samples. The three-cell magic check has a classical ceiling of 1, so those scores do not establish a violation. These results have not been rerun in the October 11 review.
 
-Reproduce: `python -m tests.test_impostor` (14 checks) from the project root.
+Reproduce: `python -m tests.test_impostor` (16 checks) from the project root. All 16 passed in the October 11 local review, including the corrected subset bound. A focused Chromium check also verified the displayed subset bound and mixed-source label without page errors; this does not certify live Qollab execution.
 
 ## How it works
 
@@ -47,7 +47,9 @@ IonQ backends accept **one job per run** and return counts only. So on load, `im
 - the four CHSH settings, 2 qubits each
 - three magic-square cells that together touch every row and column, 4 qubits each
 
-The page sends it to whatever backend you chose in *Select QPU* and shows the scores as **"The one job"**. Choosing **This run's backend** as the source then plays rounds with those real shots. **Qiskit, exact** samples each round's own circuit from its exact statevector.
+The page sends it to whatever backend you chose in *Select QPU* and shows the scores as **"The one job"**. Choosing **This run's backend** reuses the collected shots for covered settings; the six missing magic-square settings use exact simulation, explicitly labeled as a mixed source. Replayed shots are not new independent measurements. **Qiskit, exact** samples each round's own circuit from its exact statevector.
+
+**The three-cell backend check has a classical ceiling of 100%.** The 8/9 bound applies to the full game with all nine uniformly sampled settings. The packed magic-square circuit checks implementation behavior; its score cannot demonstrate violation of the full-game bound. Likewise, its reported offline noise scores must not be compared to 8/9 as a nonlocality test. All these circuits run in one simulator/device; this is an educational model of separated players, not a loophole-free Bell experiment or hardware certification.
 
 ### 01 Telepathy (CHSH)
 - **Concept:** you get a bit x, your partner a bit y. You win if a ⊕ b = x·y.
@@ -93,7 +95,7 @@ The page sends it to whatever backend you chose in *Select QPU* and shows the sc
 | `impostor/games.py` | circuits, the classical impostors, referees, brute force |
 | `impostor/service.py` | JSON functions called from JS, plus the packed audit circuit |
 | `data/zip_n12.json` | precomputed 12-qubit Zip curve |
-| `tests/test_impostor.py` | 14 checks (theory values, brute force, ablations, audit) |
+| `tests/test_impostor.py` | 16 checks (theory values, brute force, ablations, audit and subset bound) |
 | `dev/` | local harness only (HTTP bridge + Playwright UI test); not used on Qollab |
 | `tools_*.py` | offline scripts that produced `zip_n12.json` and the noise table |
 
