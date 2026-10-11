@@ -38,5 +38,7 @@ learn; we have not validated those outcomes yet.
 - Vercel root is `qcp-qollab`, Other preset, no build command, output `.`.
 - Record a public 2–3 minute video viewable without login.
 - Captain submits the public Qollab project from the team page.
-- No Vercel credentials or Qollab authenticated browser session are available to
-  this local agent; those platform actions must be completed with account access.
+- Vercel is deployed at https://qcp-arena.vercel.app and connected to GitHub.
+  A real public submission passed 124/124 cases; the missing-preparation variant
+  returned WA. A Qollab authenticated session is still needed for platform checks.
+- Full pitch, next-agent prompt and film-production brief: `qcp-handoff/`.

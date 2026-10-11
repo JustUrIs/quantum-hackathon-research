@@ -4,3 +4,6 @@ Cómo cambió mi forma de pensar el diseño*.md
 .venv/
 __pycache__/
 research/G_baish_signals.md
+
+.vercel
+.env*

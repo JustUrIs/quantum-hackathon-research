@@ -41,9 +41,16 @@ They do not establish performance or correctness on noisy hardware.
 - Upload the ZIP to Qollab and confirm the Python bridge, examples and submissions
   in the real platform. Its `main.js` is packaged with a direct Python service
   import; the catalog is loaded through that service rather than browser fetch.
-- Deploy on Vercel with root `qcp-qollab` and Other preset. No authenticated
-  Vercel session is available to the agent.
 - Record the public demo video and submit the public MIT Qollab project.
+
+## Vercel production verification
+
+Production https://qcp-arena.vercel.app, project `qcp-arena`, root `qcp-qollab`.
+GitHub connection succeeded. A clean unauthenticated browser reached HTTP 200,
+submitted A's reference and obtained AC / 124 of 124. Removing the target
+preparation returned WA. A legacy project URL returned 404. The CLI dry run
+included only the 15 QCP source files; local environment and other project files
+were excluded. Account metadata is ignored and absent from public handoff ZIPs.
 
 ## Claims deliberately bounded
 

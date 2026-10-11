@@ -9,6 +9,9 @@ This effort is supported by Qollab & IonQ.
 
 ## Try the product
 
+**[Open QCP Arena on Vercel](https://qcp-arena.vercel.app)**. This production site
+serves only QCP and is connected to the GitHub repository with root `qcp-qollab`.
+
 Open problem A. The editor contains a minimal `solve(n, oracle)` starter, not a
 solution. Add your algorithm, use **Run examples**, then **Submit solution**.
 The result shows exact ideal success probabilities, every test outcome, query
@@ -65,6 +68,10 @@ The source folder is a static site. In Vercel, import this GitHub repository wit
 - Build Command: empty
 - Output Directory: `.`
 - Environment variables: none
+
+The existing Vercel project is `qcp-arena`, connected to this repository.
+Production: https://qcp-arena.vercel.app. Public browser execution was verified:
+A's reference passed 124/124; removing target preparation gave Wrong Answer.
 
 The public browser executes a bounded Python circuit builder in a worker using
 Pyodide 0.28.3 from jsDelivr. It then runs an independent JavaScript ideal

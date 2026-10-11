@@ -1,0 +1,6 @@
+# Upload only QCP when deploying this linked monorepo with Vercel CLI.
+/*
+!qcp-qollab
+qcp-qollab/.vercel/
+qcp-qollab/**/__pycache__/
+qcp-qollab/**/*.pyc
