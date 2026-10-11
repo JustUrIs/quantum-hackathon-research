@@ -1,6 +1,6 @@
 # Quantum experiments you can question
 
-**Five independent Qollab projects, led by Guardia Grid.** Each makes a quantum idea tangible and exposes the assumptions behind its result.
+**Six independent Qollab project candidates, led by Guardia Grid.** Each makes a quantum idea tangible and exposes the assumptions behind its result. Teams can submit up to five; use the project pages to choose the strongest fit for each team.
 
 **This effort is supported by Qollab & IonQ.**
 
@@ -9,6 +9,7 @@
 | Project | The experiment | Project page | Qollab upload package |
 |---|---|---|---|
 | **GUARDIA GRID · CABA** | Robust emergency-capacity planning with public injury-crash signals; QAOA, classical baselines and single-site outages | [Main project](ambulancias-qollab/README.md) | [ZIP](releases/ambulancias-qollab.zip) |
+| DARKROOM | Test interaction-free measurement in a Qiskit absorber model; account for safe detections, absorption, and ordinary loss | [Project and physics](darkroom-qollab/README.md) | [ZIP](releases/darkroom-qollab.zip) |
 | IMPOSTOR | Reproduce constrained quantum-game correlations | [Project](impostor-qollab/README.md) | [ZIP](releases/impostor-qollab.zip) |
 | LOST SIGNAL | Compare sensor precision, then let noise choose the winner | [Project and physics](lost-signal-qollab/README.md) | [ZIP](releases/lost-signal-qollab.zip) |
 | Q-DAY CLOCK | Tell genuine order finding from an imitation given the answer | [Project and algorithm](qday-clock-qollab/README.md) | [ZIP](releases/qday-clock-qollab.zip) |
@@ -37,7 +38,11 @@ python tools/package_projects.py
 
 Guardia Grid is the lead submission: a concrete capacity-planning question, built from public Buenos Aires City data, with explicit uncertainty and a quantum circuit judges can run. It is a scenario-planning demonstrator, not a dispatch recommendation or evidence of quantum advantage. Its [README](ambulancias-qollab/README.md) explains the method, data provenance, limitations, Qollab run steps, and the next operational datasets needed for a credible pilot.
 
-The other four projects remain independent submissions with distinct questions and demos.
+The other five projects remain independent candidates with distinct questions and demos.
+
+## DARKROOM
+
+DARKROOM is a separate **Quantum Unlocked** candidate: an educational lab for interaction-free measurement. Its Qollab project builds and measures a Qiskit circuit; [a static web companion](darkroom-vercel/) only runs the analytic probability model. It does not claim a new sensor or practical quantum advantage.
 
 ## Evidence and delivery
 

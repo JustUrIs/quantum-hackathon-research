@@ -18,6 +18,7 @@ from urllib.parse import urlparse, unquote
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS = {
     "ambulancias": ("ambulancias-qollab", "ambulancia.engine"),
+    "darkroom": ("darkroom-qollab", "darkroom.engine"),
     "lost-signal": ("lost-signal-qollab", "lostsignal.service"),
     "qday-clock": ("qday-clock-qollab", "qday.service"),
     "order": ("order-qollab", "orderlab.service"),
@@ -114,7 +115,7 @@ def main():
             base = ROOT / folder
             if not rest or rest == [""]:
                 body = (base / "index.html").read_text(encoding="utf-8")
-                html = f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{slug}</title><link rel="stylesheet" href="/{slug}/main.css"><body>{body}<script type="module" src="/{slug}/main.js"></script></body></html>'
+                html = body if "<!doctype html>" in body.lower() else f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{slug}</title><link rel="stylesheet" href="/{slug}/main.css"><body>{body}<script type="module" src="/{slug}/main.js"></script></body></html>'
                 self.send(200, html, "text/html")
                 return
             if rest == ["bridge.js"]:

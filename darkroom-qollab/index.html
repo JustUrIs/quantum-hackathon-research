@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101820" />
+  <meta name="description" content="Explore interaction-free measurement with an auditable Qiskit interferometer model." />
+  <title>DARKROOM — Quantum Interrogation Lab</title>
+  <link rel="stylesheet" href="./main.css" />
+  <script type="module" src="./main.js"></script>
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">D</span><span>DARKROOM <i>/ QUANTUM INTERROGATION</i></span></a>
+    <span class="top-status"><b id="liveDot"></b><span id="status" role="status" aria-live="polite">Loading the interferometer model…</span></span>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">An interactive optics experiment</p>
+        <h1>Can a probe<br />see without<br /><em>being absorbed?</em></h1>
+        <p class="lede">A quantum probe can sometimes reveal an object through the way it changes interference—even when the successful probe never enters the object. Every absorbed or lost probe still counts.</p>
+        <p class="scope-note"><strong>What this is:</strong> a Qiskit model of a single-photon path interferometer. <strong>What it is not:</strong> a camera, a human detector, or a new experimental result.</p>
+      </div>
+      <figure class="optics-card" aria-labelledby="opticCaption">
+        <div class="figure-head"><span>PATH INTERFEROMETER</span><span id="cycleStamp">04 PASSES</span></div>
+        <svg id="interferometer" viewBox="0 0 760 390" role="img" aria-labelledby="opticTitle opticDesc">
+          <title id="opticTitle">Quantum interrogation path interferometer</title>
+          <desc id="opticDesc">A probe follows two paths. An object blocks one arm. Detectors distinguish an absent object from a present object when the surviving probe exits without absorption.</desc>
+        </svg>
+        <figcaption id="opticCaption">The dashed coral arm is blocked only when the object is present. The output ports carry different information in each case.</figcaption>
+      </figure>
+    </section>
+
+    <section class="bench" aria-labelledby="benchTitle">
+      <div class="section-title"><div><p class="eyebrow">Experiment controls</p><h2 id="benchTitle">Spend fewer probes on the sample.</h2></div><p>Choose how gently to rotate the probe each pass. Then add ordinary optical loss and watch which conclusions remain possible.</p></div>
+      <div class="bench-grid">
+        <aside class="controls">
+          <div class="control-row"><div class="label-line"><label for="cycles">Interrogation cycles</label><output id="cyclesValue" for="cycles">4</output></div><input id="cycles" type="range" min="2" max="6" step="1" value="4"/><div class="range-hints"><span>2 broad turns</span><span>6 gentle turns</span></div></div>
+          <div class="control-row"><div class="label-line"><label for="loss">Probe lost per pass</label><output id="lossValue" for="loss">0.0%</output></div><input id="loss" type="range" min="0" max="10" step="0.5" value="0"/><div class="range-hints"><span>0% ideal path</span><span>10% each pass</span></div></div>
+          <div class="model-note"><span class="note-glyph">i</span><p>The loss slider is an <strong>analytic channel model</strong>, separate from the ideal Qiskit circuit. Lost probes are inconclusive, never quietly counted as a detection.</p></div>
+        </aside>
+        <section class="outcomes" aria-label="All outcomes by object hypothesis">
+          <article class="outcome-panel absent"><div class="panel-top"><span>OBJECT ABSENT</span><span class="panel-symbol">○</span></div><h3>Interference completes.</h3><p class="panel-intro">When the blocked arm is clear, all cycles add up and the probe exits the “absent” port.</p><div class="prob-list" id="absentRows"></div><p class="panel-foot" id="absentFoot"></p></article>
+          <article class="outcome-panel present"><div class="panel-top"><span>OBJECT PRESENT</span><span class="panel-symbol">▧</span></div><h3>One arm gets interrupted.</h3><p class="panel-intro">A surviving probe can leave through the “present” port without being absorbed. Absorption and loss stay visible.</p><div class="prob-list" id="presentRows"></div><p class="panel-foot" id="presentFoot"></p></article>
+        </section>
+      </div>
+    </section>
+
+    <section class="comparison" aria-labelledby="comparisonTitle">
+      <div class="section-title"><div><p class="eyebrow">Same question, direct test</p><h2 id="comparisonTitle">No free information.</h2></div><p>The quantum protocol trades extra passes for a chance to learn “present” without absorbing the probe. The direct test is simpler—and destroys the probe when the object is there.</p></div>
+      <div class="compare-table-wrap"><table><thead><tr><th>Object</th><th>Direct one-pass probe</th><th>Quantum interrogation</th><th>What it costs</th></tr></thead><tbody id="compareRows"></tbody></table></div>
+      <p class="interpretation"><strong>Read this carefully:</strong> a “quantum success” is probabilistic. More cycles can reduce absorption in the ideal model, but each pass creates another chance for ordinary loss. The application never combines these into one flattering score.</p>
+    </section>
+
+    <section class="circuit-section" aria-labelledby="circuitTitle">
+      <div class="circuit-copy"><p class="eyebrow">The part that runs on Qollab</p><h2 id="circuitTitle">An absorber, encoded as a quantum circuit.</h2><p>One measured circuit starts both object hypotheses in an equal label superposition. The path qubit takes small rotations; a fresh environment qubit records each possible absorption. Once a branch is absorbed, controls prevent it from evolving again.</p><p>The ideal statevector is checked against an independent probability formula. The loss slider is deliberately excluded from the circuit and labeled as analytic.</p></div>
+      <div class="run-card"><div class="run-meta"><span id="qubitCount">6 QUBITS</span><span>ONE JOB / CURRENT SETTINGS</span></div><button id="runBackend" type="button">Run the measured circuit <span>↗</span></button><p id="auditStatus" role="status" aria-live="polite">Select Run in Qollab, then submit one backend job here.</p><details id="auditDetails"><summary>Show every backend count</summary><pre id="auditOutput"></pre></details></div>
+    </section>
+
+    <section class="truth-row"><div><p class="eyebrow">Known physics · careful product claim</p><h2>Old physics. A better learning instrument.</h2></div><div><p>Interaction-free measurement and high-efficiency quantum interrogation were experimentally demonstrated decades ago. DARKROOM does not claim to invent them. Its contribution is a compact teaching lab that puts coherent interference, sample damage, ordinary loss, and every failed outcome on the same screen.</p><p>That makes it useful for teaching quantum measurement and for discussing low-dose sensing. It does <strong>not</strong> establish a practical imaging or medical device.</p><p class="sources">Primary references: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.74.4763">Kwiat et al., PRL (1995)</a> · <a href="https://doi.org/10.1103/PhysRevLett.83.4725">Kwiat et al., PRL (1999)</a></p></div></section>
+
+    <footer><span>DARKROOM <i>/</i> QUANTUM INTERROGATION</span><span>Qiskit · Qollab · MIT code</span><span>Simulation, not photons</span></footer>
+  </main>
+</div>
+</body>
+</html>

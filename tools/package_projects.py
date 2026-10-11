@@ -10,6 +10,7 @@ OUT = ROOT / "releases"
 OUT.mkdir(exist_ok=True)
 PROJECTS = {
     "ambulancias-qollab": "ambulancia",
+    "darkroom-qollab": "darkroom",
     "impostor-qollab": "impostor",
     "lost-signal-qollab": "lostsignal",
     "qday-clock-qollab": "qday",
